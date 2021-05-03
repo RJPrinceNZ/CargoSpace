@@ -16,7 +16,7 @@ func _process(delta):
 		move(0,SPEED,0,delta)
 
 func move(xspeed, yspeed, Rotation, delta):
+	rotation_degrees += Rotation
 	position.x += xspeed * delta
 	position.y += yspeed * delta
-	rotation_degrees += Rotation
 	moving = true
