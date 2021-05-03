@@ -12,8 +12,6 @@ func _process(delta):
 		move(0,0,ROTATION,delta)
 	if Input.is_action_pressed("ui_up"):
 		move(0,-SPEED,0,delta)
-	if Input.is_action_pressed("ui_down"):
-		move(0,SPEED,0,delta)
 
 func move(xspeed, yspeed, Rotation, delta):
 	rotation_degrees += Rotation
