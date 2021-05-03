@@ -1,13 +1,22 @@
 extends Area2D
 
-var speed
-var velcity = Vector2()
-func _ready():
-	pass
+export var ROTATION = 1
+export var SPEED = 50
+var moving = false
 
-func control():
-	var dir_rot = 0
+func _process(delta):
+	moving = false
 	if Input.is_action_pressed("ui_left"):
-		dir_rot += 1
+		move(0,0,-ROTATION,delta)
 	if Input.is_action_pressed("ui_right"):
-		dir_rot -= 1
+		move(0,0,ROTATION,delta)
+	if Input.is_action_pressed("ui_up"):
+		move(0,-SPEED,0,delta)
+	if Input.is_action_pressed("ui_down"):
+		move(0,SPEED,0,delta)
+
+func move(xspeed, yspeed, Rotation, delta):
+	position.x += xspeed * delta
+	position.y += yspeed * delta
+	rotation_degrees += Rotation
+	moving = true
