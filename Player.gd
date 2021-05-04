@@ -1,20 +1,19 @@
 extends Area2D
 
-export var ROTATION = 1
-export var SPEED = 50
-var moving = false
+var velocity = Vector2()
+export var rotation_speed = 1
+export var speed = 50
 
-func _process(delta):
-	moving = false
+func _physics_process(delta):
+	_control(delta)
+func _control(delta):
+	var rot_dir = 0
 	if Input.is_action_pressed("ui_left"):
-		move(0,0,-ROTATION,delta)
+		rot_dir +=1
+		
 	if Input.is_action_pressed("ui_right"):
-		move(0,0,ROTATION,delta)
+		rot_dir -=1
+	rotation += rotation_speed * rot_dir * delta
+	velocity = Vector2()
 	if Input.is_action_pressed("ui_up"):
-		move(0,-SPEED,0,delta)
-
-func move(xspeed, yspeed, Rotation, delta):
-	rotation_degrees += Rotation
-	position.x += xspeed * delta
-	position.y += yspeed * delta
-	moving = true
+		velocity = Vector2(speed, 0).rotated(rotation)
