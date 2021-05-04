@@ -8,7 +8,7 @@ func _physics_process(delta):
 	_control(delta)
 func _control(delta):
 	var rot_dir = 0
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left"): #Rotation
 		rot_dir +=1
 		
 	if Input.is_action_pressed("ui_right"):
