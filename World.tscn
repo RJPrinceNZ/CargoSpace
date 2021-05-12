@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Asteroid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Wall.tscn" type="PackedScene" id=3]
 
 [node name="World" type="Node"]
 
@@ -13,4 +15,9 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 178.45, 100.547 )
+position = Vector2( 155.515, 92.068 )
+
+[node name="Asteroid" parent="." instance=ExtResource( 2 )]
+position = Vector2( 99.0015, 62.7307 )
+
+[node name="Wall" parent="." instance=ExtResource( 3 )]

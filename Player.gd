@@ -1,38 +1,43 @@
-extends Area2D
+extends KinematicBody2D
 
 var velocity = Vector2()
-export var rotation_speed = 10
+export var rotation_speed = 7.5
 export var xspeed = 0
 export var yspeed = 0
 export var a = 5
+var rot_dir = 0
 var current_rotation = 0
 var moving = false
+var speed_limit = 100
 
 func _ready():
 	current_rotation = 0
-
+func get_vector(angle):
+	return Vector2(sin(angle), cos(angle))
+	
 func _process(delta):
-	print(current_rotation)
 	if Input.is_action_pressed("ui_left"): #Rotation
-		current_rotation -= -rotation_speed
-		if current_rotation > 360:
-			current_rotation -= 360
-		if current_rotation < 0:
-			current_rotation += 360
-		rotate(-rotation_speed)
+		rot_dir -= 1
+		#current_rotation -= rotation_speed
+#		if current_rotation > 360:
+#			current_rotation -= 360
+#		if current_rotation < 0:
+#			current_rotation += 360
+		print(current_rotation)
 	if Input.is_action_pressed("ui_right"):
-		current_rotation += rotation_speed
-		if current_rotation > 360:
-			current_rotation -= 360
-		if current_rotation < 0:
-			current_rotation += 360
-		rotate(rotation_speed)
+		#current_rotation += rotation_speed
+		rot_dir += 1
+#		if current_rotation > 360:
+#			current_rotation -= 360
+#		if current_rotation < 0:
+#			current_rotation += 360
+	rotation = rotation_speed * delta * rot_dir
 	if Input.is_action_pressed("ui_up"):
-		change_speed()
-		move(xspeed,yspeed,delta)
-	else:
-		move(xspeed,yspeed,delta)
-
+		velocity = Vector2(speed_limit, 0).rotated(rotation)
+#		move_vec = move_vec.normalize()
+		#change_speed()
+		#move_and_slide(move_vec * speed_limit)
+	move_and_slide(velocity)
 func change_speed():
 	if current_rotation == 0:
 		yspeed += a
@@ -140,10 +145,7 @@ func change_speed():
 		yspeed += a * 0.984807753
 	if current_rotation == 360:
 		yspeed += a
-func rotate(Rotation):
-	rotation_degrees += Rotation
 func move(Xspeed, Yspeed, delta):
 	moving = true
 	position.x += Xspeed * delta
 	position.y += -Yspeed * delta
-	
