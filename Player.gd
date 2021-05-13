@@ -9,13 +9,20 @@ var rot_dir = 0
 var current_rotation = 0
 var moving = false
 var speed_limit = 100
+var no_fuel = false
 
 func _ready():
-	current_rotation = 0
+	pass
+
+
 func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
-	
+
+
 func _process(delta):
+	var Fuel = 80
+	Fuel = get_node("Fuel_Timer").get_wait_time()
+	get_node("Fuel_Bar").get_value() = Fuel
 	if Input.is_action_pressed("ui_left"): #Rotation
 		rot_dir -= 1
 		#current_rotation -= rotation_speed
@@ -33,7 +40,8 @@ func _process(delta):
 #			current_rotation += 360
 	rotation = rotation_speed * delta * rot_dir
 	if Input.is_action_pressed("ui_up"):
-		velocity = Vector2(speed_limit, 0).rotated(rotation)
+		if no_fuel == false:
+			velocity = Vector2(speed_limit, 0).rotated(rotation)
 #		move_vec = move_vec.normalize()
 		#change_speed()
 		#move_and_slide(move_vec * speed_limit)
@@ -149,3 +157,8 @@ func move(Xspeed, Yspeed, delta):
 	moving = true
 	position.x += Xspeed * delta
 	position.y += -Yspeed * delta
+
+
+func _on_Fuel_Timer_timeout():
+	no_fuel = true
+
