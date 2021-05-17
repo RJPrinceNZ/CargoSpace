@@ -1,51 +1,52 @@
 extends KinematicBody2D
 
-var velocity = Vector2()
+var velo = Vector2()
 export var rotation_speed = 7.5
 export var xspeed = 0
 export var yspeed = 0
-export var a = 5
+export var a = 200
 var rot_dir = 0
 var current_rotation = 0
 var moving = false
-var speed_limit = 100
+var speed_limit = 500
 var no_fuel = false
+var motion = Vector2.ZERO
 
 func _ready():
 	pass
 
 
+
 func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
 
-
 func _process(delta):
-	var Fuel = 80
-	Fuel = get_node("Fuel_Timer").get_wait_time()
-	get_node("Fuel_Bar").get_value() = Fuel
-	if Input.is_action_pressed("ui_left"): #Rotation
-		rot_dir -= 1
+	var axis = get_input_axis()
+	if no_fuel == false:
+		apply_movement(axis * a * delta)
+	motion = move_and_slide(motion)
+	#if Input.is_action_pressed("ui_left"): #Rotation
+		#rot_dir -= 1
 		#current_rotation -= rotation_speed
 #		if current_rotation > 360:
 #			current_rotation -= 360
 #		if current_rotation < 0:
 #			current_rotation += 360
-		print(current_rotation)
-	if Input.is_action_pressed("ui_right"):
+	#if Input.is_action_pressed("ui_right"):
 		#current_rotation += rotation_speed
-		rot_dir += 1
+		#rot_dir += 1
 #		if current_rotation > 360:
 #			current_rotation -= 360
 #		if current_rotation < 0:
 #			current_rotation += 360
-	rotation = rotation_speed * delta * rot_dir
-	if Input.is_action_pressed("ui_up"):
-		if no_fuel == false:
-			velocity = Vector2(speed_limit, 0).rotated(rotation)
+	#rotation = rotation_speed * delta * rot_dir
+	#if Input.is_action_held("ui_up"):
+		#if no_fuel == false:
+			#velo = Vector2(speed_limit, 0).rotated(rotation)
 #		move_vec = move_vec.normalize()
 		#change_speed()
 		#move_and_slide(move_vec * speed_limit)
-	move_and_slide(velocity)
+	#move_and_slide(velo)
 func change_speed():
 	if current_rotation == 0:
 		yspeed += a
@@ -162,3 +163,12 @@ func move(Xspeed, Yspeed, delta):
 func _on_Fuel_Timer_timeout():
 	no_fuel = true
 
+func apply_movement(acceleration):
+	motion += acceleration
+	motion = motion.clamped(speed_limit)
+
+func get_input_axis():
+	var axis = Vector2.ZERO
+	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	return axis.normalized()
