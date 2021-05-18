@@ -25,22 +25,28 @@ func _process(delta):
 	if no_fuel == false:
 		apply_movement(axis * a * delta)
 	motion = move_and_slide(motion)
-	#if Input.is_action_pressed("ui_left"): #Rotation
-		#rot_dir -= 1
-		#current_rotation -= rotation_speed
-#		if current_rotation > 360:
-#			current_rotation -= 360
-#		if current_rotation < 0:
-#			current_rotation += 360
-	#if Input.is_action_pressed("ui_right"):
-		#current_rotation += rotation_speed
-		#rot_dir += 1
-#		if current_rotation > 360:
-#			current_rotation -= 360
-#		if current_rotation < 0:
-#			current_rotation += 360
-	#rotation = rotation_speed * delta * rot_dir
-	#if Input.is_action_held("ui_up"):
+	rotation = delta * rot_dir
+	if Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_up"):
+		rot_dir = -45
+	elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_down"):
+		rot_dir = -140
+	elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_up"):
+		rot_dir = 45
+	elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_down"):
+		rot_dir = 140
+	elif Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"): #Rotation
+		rot_dir = 280
+	elif  Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
+		rot_dir = 188.5
+	elif Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_up"):
+		rot_dir = 92.5
+	elif Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
+		rot_dir = 0
+	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right"):
+		if no_fuel == false:
+			$AnimationPlayer.play("Moving")
+	else:
+		$AnimationPlayer.play("Idle")
 		#if no_fuel == false:
 			#velo = Vector2(speed_limit, 0).rotated(rotation)
 #		move_vec = move_vec.normalize()
