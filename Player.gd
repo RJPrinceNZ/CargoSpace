@@ -5,6 +5,7 @@ export var rotation_speed = 7.5
 export var xspeed = 0
 export var yspeed = 0
 export var a = 200
+var mouse_location
 var rot_dir = 0
 var current_rotation = 0
 var moving = false
@@ -12,8 +13,7 @@ var speed_limit = 500
 var no_fuel = false
 var motion = Vector2.ZERO
 
-func _ready():
-	pass
+
 
 
 
@@ -21,32 +21,36 @@ func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
 
 func _process(delta):
-	var axis = get_input_axis()
-	if no_fuel == false:
-		apply_movement(axis * a * delta)
-	motion = move_and_slide(motion)
-	rotation = delta * rot_dir
-	if Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_up"):
-		rot_dir = -45
-	elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_down"):
-		rot_dir = -140
-	elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_up"):
-		rot_dir = 45
-	elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_down"):
-		rot_dir = 140
-	elif Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"): #Rotation
-		rot_dir = 280
-	elif  Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
-		rot_dir = 188.5
-	elif Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_up"):
-		rot_dir = 92.5
-	elif Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
-		rot_dir = 0
-	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right"):
-		if no_fuel == false:
-			$AnimationPlayer.play("Moving")
+	if Input.is_action_pressed("ui_manual_rotation"):
+		mouse_location = get_local_mouse_position()
+		rotation += mouse_location.angle() 
 	else:
-		$AnimationPlayer.play("Idle")
+		var axis = get_input_axis()
+		if no_fuel == false:
+			apply_movement(axis * a * delta)
+		motion = move_and_slide(motion)
+		rotation = delta * rot_dir
+		if Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_up"):
+			rot_dir = -45
+		elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_down"):
+			rot_dir = -140
+		elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_up"):
+			rot_dir = 45
+		elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_down"):
+			rot_dir = 140
+		elif Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"): #Rotation
+			rot_dir = 280
+		elif  Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"):
+			rot_dir = 188.5
+		elif Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_up"):
+			rot_dir = 92.5
+		elif Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
+			rot_dir = 0
+		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right"):
+			if no_fuel == false:
+				$AnimationPlayer.play("Moving")
+		else:
+			$AnimationPlayer.play("Idle")
 		#if no_fuel == false:
 			#velo = Vector2(speed_limit, 0).rotated(rotation)
 #		move_vec = move_vec.normalize()
