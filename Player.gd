@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+
+onready var bullet = preload("res://Bullet.tscn")
 var velo = Vector2()
 export var rotation_speed = 7.5
 export var xspeed = 0
@@ -12,7 +14,7 @@ var moving = false
 var speed_limit = 500
 var no_fuel = false
 var motion = Vector2.ZERO
-
+var can_fire = true
 
 
 
@@ -21,14 +23,14 @@ func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
 
 func _process(delta):
+	motion = move_and_slide(motion)
 	if Input.is_action_pressed("ui_manual_rotation"):
 		mouse_location = get_local_mouse_position()
-		rotation += mouse_location.angle() 
+		rotation += mouse_location.angle() +deg2rad(90)
 	else:
 		var axis = get_input_axis()
 		if no_fuel == false:
 			apply_movement(axis * a * delta)
-		motion = move_and_slide(motion)
 		rotation = delta * rot_dir
 		if Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_up"):
 			rot_dir = -45
@@ -51,6 +53,12 @@ func _process(delta):
 				$AnimationPlayer.play("Moving")
 		else:
 			$AnimationPlayer.play("Idle")
+	if Input.is_action_pressed("ui_player_fire") and can_fire == true:
+		can_fire = false
+		var new_bullet = bullet.instance()
+		new_bullet.global_transform = $Position2D.global_transform
+		get_parent().add_child(new_bullet)
+		$Gun_Timer.start()
 		#if no_fuel == false:
 			#velo = Vector2(speed_limit, 0).rotated(rotation)
 #		move_vec = move_vec.normalize()
@@ -182,3 +190,7 @@ func get_input_axis():
 	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	return axis.normalized()
+
+
+func _on_Gun_Timer_timeout():
+	can_fire = true
