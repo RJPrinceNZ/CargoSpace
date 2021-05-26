@@ -16,6 +16,9 @@ var no_fuel = false
 var motion = Vector2.ZERO
 var can_fire = true
 
+func _ready():
+	$Fuel_Timer.start()
+	pass
 
 
 
@@ -24,6 +27,12 @@ func get_vector(angle):
 
 func _process(delta):
 	motion = move_and_slide(motion)
+	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
+		if no_fuel == false:
+			if not Input.is_action_pressed("ui_manual_rotation"):
+				$AnimationPlayer.play("Moving")
+	else:
+		$AnimationPlayer.play("Idle")
 	if Input.is_action_pressed("ui_manual_rotation"):
 		mouse_location = get_local_mouse_position()
 		rotation += mouse_location.angle() +deg2rad(90)
@@ -48,11 +57,6 @@ func _process(delta):
 			rot_dir = 92.5
 		elif Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
 			rot_dir = 0
-		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right"):
-			if no_fuel == false:
-				$AnimationPlayer.play("Moving")
-		else:
-			$AnimationPlayer.play("Idle")
 	if Input.is_action_pressed("ui_player_fire") and can_fire == true:
 		can_fire = false
 		var new_bullet = bullet.instance()
