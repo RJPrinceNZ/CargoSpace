@@ -7,6 +7,7 @@ export var rotation_speed = 7.5
 export var xspeed = 0
 export var yspeed = 0
 export var a = 200
+var hp = 100
 var mouse_location
 var rot_dir = 0
 var current_rotation = 0
@@ -26,6 +27,11 @@ func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
 
 func _process(delta):
+	print(hp)
+	if hp <= 0:
+		$AnimationPlayer.play("Dying")
+		yield($AnimationPlayer,"animation_finished")
+		queue_free()
 	motion = move_and_slide(motion)
 	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		if no_fuel == false:
@@ -198,3 +204,8 @@ func get_input_axis():
 
 func _on_Gun_Timer_timeout():
 	can_fire = true
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Asteroid":
+		hp += -15

@@ -21,3 +21,21 @@ position = Vector2( 155.515, 92.068 )
 position = Vector2( 99.0015, 62.7307 )
 
 [node name="Wall" parent="." instance=ExtResource( 3 )]
+
+[node name="Asteroid2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 247.134, 34.6482 )
+
+[node name="Asteroid3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 48.7904, 136.118 )
+
+[node name="Asteroid4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 49.851, 31.4663 )
+
+[node name="Asteroid5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 234.052, 136.825 )
+
+[node name="Asteroid6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 146.371, 145.31 )
+
+[node name="Asteroid7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 173.595, 44.5477 )

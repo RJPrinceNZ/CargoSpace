@@ -1,13 +1,15 @@
 extends RigidBody2D
 
-export var bullet_speed = 6000
+export var bullet_speed = 12000
+var is_fired = true
 
 func _ready():
 	add_to_group("ignore")
 	pass
 
 func _physics_process(delta):
-	add_central_force(get_global_transform().y * -bullet_speed * delta)
+	if is_fired == true:
+		add_central_force(get_global_transform().y * -bullet_speed * delta)
 
 
 

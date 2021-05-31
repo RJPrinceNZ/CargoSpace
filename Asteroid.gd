@@ -1,17 +1,19 @@
 extends StaticBody2D
 
+var hp = 100 #health points
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 func _process(delta):
-	rotation += 1*delta
+	rotation += 1*delta # Rotation
+	if hp <= 0:
+		$AnimationPlayer.play("Death") #Explosion Animation
+		yield($AnimationPlayer,"animation_finished")
+		queue_free()
+	else:
+		$AnimationPlayer.play("Idle")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Area2D_body_entered(body): #If it is hit by something
+	if body.name == "Bullet":
+		hp += -20
+	if body.name == "Player":
+		hp += -50
