@@ -27,7 +27,7 @@ func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
 
 func _process(delta):
-	print(hp)
+	
 	if hp <= 0:
 		$AnimationPlayer.play("Dying")
 		yield($AnimationPlayer,"animation_finished")
@@ -207,5 +207,6 @@ func _on_Gun_Timer_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	if body.name == "Asteroid":
+	print(hp)
+	if body.is_in_group("Asteroid"):
 		hp += -15
