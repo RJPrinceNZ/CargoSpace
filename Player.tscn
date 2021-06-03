@@ -130,11 +130,11 @@ tracks/2/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=6]
-radius = 3.67838
-height = 6.46331
+radius = 4.66893
+height = 8.07783
 
 [sub_resource type="CapsuleShape2D" id=7]
-radius = 3.7335
+radius = 4.125
 height = 13.5536
 
 [node name="Player" type="KinematicBody2D"]

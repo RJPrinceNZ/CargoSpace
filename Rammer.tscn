@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Rammer.gd" type="Script" id=1]
 [ext_resource path="res://CX16-X1.png" type="Texture" id=2]
+[ext_resource path="res://spaceship_flame.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 10.6513
@@ -10,16 +11,14 @@ height = 1.9928
 [sub_resource type="CircleShape2D" id=2]
 radius = 94.631
 
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 13.2528
+height = 4.37149
+
 [node name="Rammer" type="KinematicBody2D" groups=[
 "Rammer",
 ]]
 script = ExtResource( 1 )
-
-[node name="CX16-X1" type="Sprite" parent="."]
-position = Vector2( 0.132433, 0.0331078 )
-rotation = 1.5708
-scale = Vector2( 0.125, 0.125 )
-texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, 0 )
@@ -34,4 +33,27 @@ shape = SubResource( 2 )
 rotation = -1.5708
 scale = Vector2( 1, 1.65 )
 
+[node name="DamageBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox"]
+position = Vector2( -0.561863, 0 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="spaceship_flame" type="Sprite" parent="."]
+position = Vector2( -10.322, 0 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, 7.55207 )
+hframes = 7
+
+[node name="CX16-X1" type="Sprite" parent="."]
+position = Vector2( 0.132433, 0.0331078 )
+rotation = 1.5708
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 2 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="DamageBox" to="." method="_on_DamageBox_body_entered"]

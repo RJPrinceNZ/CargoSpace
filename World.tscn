@@ -43,3 +43,6 @@ position = Vector2( 173.595, 44.5477 )
 
 [node name="Rammer" parent="." instance=ExtResource( 4 )]
 position = Vector2( 30.5531, 92.6042 )
+
+[node name="Rammer2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 273.712, 94.6009 )

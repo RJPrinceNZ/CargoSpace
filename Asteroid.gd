@@ -13,7 +13,7 @@ func _process(delta):
 
 
 func _on_Area2D_body_entered(body): #If it is hit by something
-	if body.name == "Bullet":
+	if body.is_in_group("Bullet"):
 		hp += -20
 	if body.name == "Player":
 		hp += -50

@@ -210,3 +210,5 @@ func _on_Area2D_body_entered(body):
 	print(hp)
 	if body.is_in_group("Asteroid"):
 		hp += -15
+	if body.is_in_group("Rammer"):
+		hp += -50
