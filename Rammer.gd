@@ -15,8 +15,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if hp <= 0:
+		$AnimationPlayer.play("Death")
+		yield($AnimationPlayer,"animation_finished")
 		queue_free()
 	if follow_player == true:
+		$AnimationPlayer.play("Moving")
 		look_at(player.position)
 		#var player_loc = get_angle_to(player.global_transform.origin)
 		#rotation += player_loc
@@ -24,6 +27,8 @@ func _physics_process(delta):
 		#print(player.global_transform.origin)
 		var velocity = position.direction_to(player.position) * movespeed
 		move_and_slide(velocity, Vector2.UP)
+	else:
+		$AnimationPlayer.play("Idle")
 		
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
