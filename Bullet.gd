@@ -17,3 +17,4 @@ func _on_Area2D_body_entered(body):
 	if not body.name == "Player" and not body.is_in_group("ignore"):
 		queue_free()
 	pass # Replace with function body.
+

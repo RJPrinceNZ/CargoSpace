@@ -212,3 +212,7 @@ func _on_Area2D_body_entered(body):
 		hp += -15
 	if body.is_in_group("Rammer"):
 		hp += -50
+	if body.is_in_group("Enemy_Bullet"):
+		hp += -10
+	if body.is_in_group("Shooter"):
+		hp += -35
