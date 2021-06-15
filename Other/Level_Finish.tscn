@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Other/Level_Finish.gd" type="Script" id=1]
+
+[node name="Level_Finish" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 82.3321
+margin_top = 145.642
+margin_right = 234.332
+margin_bottom = 169.642
+text = "Return to Level Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -15,6 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Cargo Space"
+run/main_scene="res://Other/Title.tscn"
 config/icon="res://icon.png"
 
 [display]
