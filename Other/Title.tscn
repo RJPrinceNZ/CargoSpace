@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 
 [node name="background_menu" type="Sprite" parent="."]
-position = Vector2( 160.014, 84.7914 )
+position = Vector2( 159.749, 85.0563 )
 scale = Vector2( 0.238492, 0.238492 )
 texture = ExtResource( 2 )
 
@@ -17,6 +17,16 @@ margin_top = 138.873
 margin_right = 212.766
 margin_bottom = 158.873
 text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 149.168
+margin_top = 53.3936
+margin_right = 189.168
+margin_bottom = 67.3936
+text = "yes"
 __meta__ = {
 "_edit_use_anchors_": false
 }
