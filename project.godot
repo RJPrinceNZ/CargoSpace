@@ -18,6 +18,10 @@ config/name="Cargo Space"
 run/main_scene="res://Other/Title.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://Player/player_stats.gd"
+
 [display]
 
 window/size/width=320

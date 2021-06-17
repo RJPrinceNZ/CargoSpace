@@ -17,6 +17,7 @@ func _ready():
 
 
 func _on_Button_pressed():
+	print("hello")
 	get_tree().change_scene("res://Other/Level_1.tscn")
 
 

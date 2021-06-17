@@ -19,7 +19,6 @@ var can_fire = true
 
 func _ready():
 	$Fuel_Timer.start()
-	pass
 
 
 
@@ -28,7 +27,7 @@ func get_vector(angle):
 
 func _process(delta):
 	
-	if hp <= 0:
+	if PlayerStats.get_health() <= 0:
 		$AnimationPlayer.play("Dying")
 		yield($AnimationPlayer,"animation_finished")
 		queue_free()
@@ -189,7 +188,9 @@ func move(Xspeed, Yspeed, delta):
 
 
 func _on_Fuel_Timer_timeout():
-	no_fuel = true
+	PlayerStats.change_fuel(-1)
+	if not PlayerStats.has_fuel():
+		no_fuel = true
 
 func apply_movement(acceleration):
 	motion += acceleration
@@ -209,10 +210,10 @@ func _on_Gun_Timer_timeout():
 func _on_Area2D_body_entered(body):
 	print(hp)
 	if body.is_in_group("Asteroid"):
-		hp += -15
+		PlayerStats.change_health(-15)
 	if body.is_in_group("Rammer"):
-		hp += -50
+		PlayerStats.change_health(-50)
 	if body.is_in_group("Enemy_Bullet"):
-		hp += -10
+		PlayerStats.change_health(-10)
 	if body.is_in_group("Shooter"):
-		hp += -35
+		PlayerStats.change_health(-35)
