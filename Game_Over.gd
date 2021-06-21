@@ -17,17 +17,4 @@ func _ready():
 
 
 func _on_Button_pressed():
-	print("hello")
-	get_tree().change_scene("res://Other/Level_1.tscn")
-
-
-func _on_Back_pressed():
-	get_tree().change_scene("res://Other/Title.tscn")
-
-
-func _on_Button2_pressed():
-	get_tree().change_scene("res://Other/Level_2.tscn")
-
-
-func _on_Button3_pressed():
-	get_tree().change_scene("res://Other/Level_3.tscn")
+	get_tree().change_scene("res://Other/Level_Selection.tscn")

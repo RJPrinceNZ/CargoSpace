@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Other/Level_Selection.gd" type="Script" id=1]
-[ext_resource path="res://Other/Arkitech Bold.ttf" type="DynamicFontData" id=2]
-
-[sub_resource type="DynamicFont" id=1]
-extra_spacing_top = 2
-font_data = ExtResource( 2 )
+[ext_resource path="res://Other/Font_small.tres" type="DynamicFont" id=2]
 
 [node name="Level_Selection" type="Node"]
 script = ExtResource( 1 )
@@ -15,7 +11,7 @@ margin_left = 14.2542
 margin_top = 97.4036
 margin_right = 43.2542
 margin_bottom = 126.404
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -26,18 +22,18 @@ margin_left = 63.0
 margin_top = 57.0
 margin_right = 95.0
 margin_bottom = 87.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button3" type="Button" parent="."]
-margin_left = 115.12
+margin_left = 114.371
 margin_top = 97.4036
-margin_right = 147.12
+margin_right = 146.371
 margin_bottom = 127.404
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -48,7 +44,7 @@ margin_left = 171.0
 margin_top = 53.0
 margin_right = 203.0
 margin_bottom = 84.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "4"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -59,7 +55,7 @@ margin_left = 227.0
 margin_top = 102.0
 margin_right = 259.0
 margin_bottom = 131.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "5"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -70,7 +66,7 @@ margin_left = 279.0
 margin_top = 57.0
 margin_right = 310.0
 margin_bottom = 87.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "6"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -81,7 +77,7 @@ margin_left = 235.251
 margin_top = 1.24746
 margin_right = 319.251
 margin_bottom = 25.2475
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -89,4 +85,5 @@ __meta__ = {
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

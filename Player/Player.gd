@@ -7,7 +7,6 @@ export var rotation_speed = 7.5
 export var xspeed = 0
 export var yspeed = 0
 export var a = 200
-var hp = 100
 var mouse_location
 var rot_dir = 0
 var current_rotation = 0
@@ -19,6 +18,8 @@ var can_fire = true
 
 func _ready():
 	$Fuel_Timer.start()
+	PlayerStats.fuel = 100
+	PlayerStats.health = 100
 
 
 
@@ -30,7 +31,7 @@ func _process(delta):
 	if PlayerStats.get_health() <= 0:
 		$AnimationPlayer.play("Dying")
 		yield($AnimationPlayer,"animation_finished")
-		queue_free()
+		get_tree().change_scene("res://Other/Game_Over.tscn")
 	motion = move_and_slide(motion)
 	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		if no_fuel == false:
@@ -191,6 +192,7 @@ func _on_Fuel_Timer_timeout():
 	PlayerStats.change_fuel(-1)
 	if not PlayerStats.has_fuel():
 		no_fuel = true
+	$ExtraTimeTimer.start()
 
 func apply_movement(acceleration):
 	motion += acceleration
@@ -208,7 +210,6 @@ func _on_Gun_Timer_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	print(hp)
 	if body.is_in_group("Asteroid"):
 		PlayerStats.change_health(-15)
 	if body.is_in_group("Rammer"):
@@ -217,3 +218,7 @@ func _on_Area2D_body_entered(body):
 		PlayerStats.change_health(-10)
 	if body.is_in_group("Shooter"):
 		PlayerStats.change_health(-35)
+
+
+func _on_ExtraTimeTimer_timeout():
+	get_tree().change_scene("res://Other/Game_Over.tscn")
