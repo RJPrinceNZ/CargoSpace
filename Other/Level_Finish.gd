@@ -18,3 +18,7 @@ func _ready():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Other/Level_Selection.tscn")
+
+
+func _on_Button2_pressed():
+	PlayerStats.change_level()

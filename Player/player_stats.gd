@@ -4,6 +4,8 @@ var health
 var health_max
 var fuel
 var fuel_max
+var current_level = 1
+var level_count = 3
 
 func _ready():
 	health = 100
@@ -22,8 +24,20 @@ func change_fuel(amount):
 func get_health():
 	return health
 
+func reset():
+	health = health_max
+	fuel = fuel_max
+
 func get_fuel():
 	return fuel
+
+func set_level(amount):
+	current_level = amount
+
+func change_level():
+	current_level += 1
+	if current_level <= level_count:
+		get_tree().change_scene("res://Other/Levels/Level_" +str(current_level)+".tscn")
 
 func has_fuel():
 	return fuel > 0

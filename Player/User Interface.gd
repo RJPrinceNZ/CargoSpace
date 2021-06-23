@@ -15,8 +15,9 @@ func _process(delta):
 	$Fuel_Bar.value = PlayerStats.get_fuel()
 	
 
+func _on_TextureButton_pressed():
+	get_tree().change_scene("res://Other/Levels/Level_" +str(PlayerStats.current_level)+".tscn")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_TextureButton2_pressed():
+	get_tree().change_scene("res://Other/Level_Selection.tscn")

@@ -1,10 +1,12 @@
 extends StaticBody2D
 
 var hp = 100 #health points
+var a = rand_range(1,-1)
 
 func _process(delta):
-	rotation += 1*delta # Rotation
+	rotation += a*delta # Rotation
 	if hp <= 0:
+		a = 0
 		$AnimationPlayer.play("Death") #Explosion Animation
 		yield($AnimationPlayer,"animation_finished")
 		queue_free()

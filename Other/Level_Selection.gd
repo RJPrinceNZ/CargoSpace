@@ -17,8 +17,8 @@ func _ready():
 
 
 func _on_Button_pressed():
-	print("hello")
-	get_tree().change_scene("res://Other/Level_1.tscn")
+	PlayerStats.set_level(1)
+	get_tree().change_scene("res://Other/Levels/Level_1.tscn")
 
 
 func _on_Back_pressed():
@@ -26,8 +26,15 @@ func _on_Back_pressed():
 
 
 func _on_Button2_pressed():
-	get_tree().change_scene("res://Other/Level_2.tscn")
+	PlayerStats.set_level(2)
+	get_tree().change_scene("res://Other/Levels/Level_2.tscn")
 
 
 func _on_Button3_pressed():
-	get_tree().change_scene("res://Other/Level_3.tscn")
+	PlayerStats.set_level(3)
+	get_tree().change_scene("res://Other/Levels/Level_3.tscn")
+
+
+func _on_Button4_pressed():
+	PlayerStats.set_level(4)
+	get_tree().change_scene("res://Other/Levels/Level_4.tscn")

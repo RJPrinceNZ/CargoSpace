@@ -29,4 +29,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button2" type="Button" parent="."]
+margin_left = 98.5294
+margin_top = 109.499
+margin_right = 213.529
+margin_bottom = 129.499
+custom_fonts/font = ExtResource( 2 )
+text = "Try Again?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
