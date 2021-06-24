@@ -12,7 +12,7 @@
 [node name="Level_4" type="Node"]
 
 [node name="background_03_parallax_01" type="Sprite" parent="."]
-position = Vector2( -87.9183, -22.5673 )
+position = Vector2( 7.85187, 5.29205 )
 texture = ExtResource( 7 )
 
 [node name="Wall_Asteroid" parent="." instance=ExtResource( 1 )]
@@ -169,7 +169,7 @@ position = Vector2( -370.557, 20.2133 )
 position = Vector2( -432.854, 61.1831 )
 
 [node name="Wall_Asteroid77" parent="." instance=ExtResource( 1 )]
-position = Vector2( -341.253, -8.40211 )
+position = Vector2( -341.92, -6.39985 )
 
 [node name="Wall_Asteroid78" parent="." instance=ExtResource( 1 )]
 position = Vector2( -303.75, 1.93256 )
@@ -692,3 +692,57 @@ position = Vector2( -356.784, -211.428 )
 
 [node name="Finish_Point" parent="." instance=ExtResource( 8 )]
 position = Vector2( -421.774, -57.6848 )
+
+[node name="Asteroid32" parent="." instance=ExtResource( 6 )]
+position = Vector2( -305.011, -266.301 )
+
+[node name="Asteroid33" parent="." instance=ExtResource( 6 )]
+position = Vector2( -244.943, -335.712 )
+
+[node name="Asteroid34" parent="." instance=ExtResource( 6 )]
+position = Vector2( -328.371, -361.742 )
+
+[node name="Asteroid35" parent="." instance=ExtResource( 6 )]
+position = Vector2( -297.002, -377.092 )
+
+[node name="Asteroid36" parent="." instance=ExtResource( 6 )]
+position = Vector2( -319.694, -301.674 )
+
+[node name="Asteroid37" parent="." instance=ExtResource( 6 )]
+position = Vector2( -290.328, -335.712 )
+
+[node name="Asteroid38" parent="." instance=ExtResource( 6 )]
+position = Vector2( -209.57, -363.744 )
+
+[node name="Asteroid39" parent="." instance=ExtResource( 6 )]
+position = Vector2( -252.952, -370.418 )
+
+[node name="Asteroid40" parent="." instance=ExtResource( 6 )]
+position = Vector2( -331.04, -393.778 )
+
+[node name="Asteroid41" parent="." instance=ExtResource( 6 )]
+position = Vector2( -558.63, -403.789 )
+
+[node name="Asteroid42" parent="." instance=ExtResource( 6 )]
+position = Vector2( -545.95, -377.092 )
+
+[node name="Asteroid44" parent="." instance=ExtResource( 6 )]
+position = Vector2( -539.943, -178.201 )
+
+[node name="Asteroid45" parent="." instance=ExtResource( 6 )]
+position = Vector2( -564.547, -196.456 )
+
+[node name="Asteroid46" parent="." instance=ExtResource( 6 )]
+position = Vector2( -539.149, -219.474 )
+
+[node name="Asteroid47" parent="." instance=ExtResource( 6 )]
+position = Vector2( -443.905, -429.011 )
+
+[node name="Rammer6" parent="." instance=ExtResource( 5 )]
+position = Vector2( -449.284, -232.193 )
+
+[node name="Rammer7" parent="." instance=ExtResource( 5 )]
+position = Vector2( -460.346, -392.088 )
+
+[node name="Rammer8" parent="." instance=ExtResource( 5 )]
+position = Vector2( -639.723, -258.746 )

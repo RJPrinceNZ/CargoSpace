@@ -38,3 +38,8 @@ func _on_Button3_pressed():
 func _on_Button4_pressed():
 	PlayerStats.set_level(4)
 	get_tree().change_scene("res://Other/Levels/Level_4.tscn")
+
+
+func _on_Button5_pressed():
+	PlayerStats.set_level(5)
+	get_tree().change_scene("res://Other/Levels/Level_5.tscn")

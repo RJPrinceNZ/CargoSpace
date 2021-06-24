@@ -5,7 +5,7 @@ var health_max
 var fuel
 var fuel_max
 var current_level = 1
-var level_count = 3
+var level_count = 5
 
 func _ready():
 	health = 100
