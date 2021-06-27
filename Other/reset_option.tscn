@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://reset_option.gd" type="Script" id=1]
+[ext_resource path="res://Other/Font_Extra_small.tres" type="DynamicFont" id=2]
+
+[node name="reset_option" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 187.767
+margin_top = 1.28099
+margin_right = 318.767
+margin_bottom = 66.281
+color = Color( 0.556863, 0.929412, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 190.779
+margin_top = 4.12189
+margin_right = 315.779
+margin_bottom = 63.1219
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 198.821
+margin_top = 7.2921
+margin_right = 308.821
+margin_bottom = 40.2921
+custom_fonts/font = ExtResource( 2 )
+text = "Do you want
+to reset
+the Level?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Yes" type="Button" parent="."]
+margin_left = 198.821
+margin_top = 40.2921
+margin_right = 210.821
+margin_bottom = 60.2921
+custom_fonts/font = ExtResource( 2 )
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="No" type="Button" parent="."]
+margin_left = 267.75
+margin_top = 40.8127
+margin_right = 308.75
+margin_bottom = 60.8127
+custom_fonts/font = ExtResource( 2 )
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Yes" to="." method="_on_Yes_pressed"]
+[connection signal="pressed" from="No" to="." method="_on_No_pressed"]

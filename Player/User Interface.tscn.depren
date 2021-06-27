@@ -115,11 +115,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label3" type="Label" parent="."]
+margin_left = 195.162
+margin_top = 3.91889
+margin_right = 306.162
+margin_bottom = 12.9189
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.729412, 0, 0, 1 )
+text = "RESET LEVEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 307.321
-margin_top = 2.1984
-margin_right = 318.321
-margin_bottom = 13.1984
+margin_left = 306.487
+margin_top = 2.78381
+margin_right = 317.487
+margin_bottom = 13.7838
 texture_normal = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -127,15 +139,30 @@ __meta__ = {
 }
 
 [node name="TextureButton2" type="TextureButton" parent="."]
-margin_left = 307.756
-margin_top = 15.101
-margin_right = 317.756
-margin_bottom = 25.101
+margin_left = 307.297
+margin_top = 17.2701
+margin_right = 317.297
+margin_bottom = 27.2701
 texture_normal = ExtResource( 4 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 211.0
+margin_top = 17.7071
+margin_right = 304.0
+margin_bottom = 26.7071
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.729412, 0, 0, 1 )
+text = "Quit Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 311.95, 21.9274 )
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
