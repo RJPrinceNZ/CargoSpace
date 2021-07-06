@@ -15,7 +15,10 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
 [node name="Asteroid" parent="." instance=ExtResource( 2 )]
-position = Vector2( 333.169, 12.0651 )
+position = Vector2( 333.169, 11.7842 )
+
+[node name="Asteroid8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 278.963, 56.144 )
 
 [node name="Asteroid2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 237.3, 25.6353 )

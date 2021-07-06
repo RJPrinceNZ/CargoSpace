@@ -44,3 +44,10 @@ func _on_DamageBox_body_entered(body):
 		hp += -20
 	if body.name == "Player":
 		hp = 0
+	if body.is_in_group("Rocket"):
+		hp = 0
+
+
+func _on_DamageBox_area_entered(area):
+	if area.is_in_group("Explosion"):
+		hp = 0

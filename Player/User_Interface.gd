@@ -15,6 +15,10 @@ func _ready():
 func _process(delta):
 	$Health_Bar.value = PlayerStats.get_health()
 	$Fuel_Bar.value = PlayerStats.get_fuel()
+	if PlayerStats.has_rocket == 1:
+		$AnimationPlayer.play("Yes_Rocket")
+	else:
+		$AnimationPlayer.play("No_Rocket")
 	
 
 func _on_TextureButton_pressed():

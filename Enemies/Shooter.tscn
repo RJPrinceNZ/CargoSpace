@@ -164,6 +164,7 @@ anims/Idle = SubResource( 9 )
 [node name="Out_of_range_timer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="area_entered" from="DamageBox" to="." method="_on_DamageBox_area_entered"]
 [connection signal="body_entered" from="DamageBox" to="." method="_on_DamageBox_body_entered"]
 [connection signal="timeout" from="Shooter_Timer" to="." method="_on_Shooter_Timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

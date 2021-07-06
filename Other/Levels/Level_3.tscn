@@ -350,6 +350,36 @@ position = Vector2( 968.644, 159.797 )
 [node name="Asteroid" parent="." instance=ExtResource( 7 )]
 position = Vector2( 355.578, 69.8456 )
 
+[node name="Asteroid3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 311.081, 114.343 )
+
+[node name="Asteroid4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 340.746, 99.5106 )
+
+[node name="Asteroid5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 337.037, 126.527 )
+
+[node name="Asteroid6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 352.4, 33.8239 )
+
+[node name="Asteroid7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 338.097, 175.262 )
+
+[node name="Asteroid8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 867.894, 99.6669 )
+
+[node name="Asteroid9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 832.616, 2.02301 )
+
+[node name="Asteroid10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 846.475, 197.941 )
+
+[node name="Asteroid11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 677.016, -5.53651 )
+
+[node name="Asteroid12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 681.425, 217.47 )
+
 [node name="Asteroid2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 355.953, 148.686 )
 

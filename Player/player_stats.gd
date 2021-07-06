@@ -5,7 +5,8 @@ var health_max
 var fuel
 var fuel_max
 var current_level = 1
-var level_count = 5
+var level_count = 6
+var has_rocket = 0
 
 func _ready():
 	health = 100
@@ -41,3 +42,11 @@ func change_level():
 
 func has_fuel():
 	return fuel > 0
+
+func change_rocket(amount):
+	has_rocket += 1
+	has_rocket = clamp(has_rocket,0,1)
+	
+func set_rocket(amount):
+	has_rocket = amount
+	has_rocket = clamp(has_rocket,0,1)

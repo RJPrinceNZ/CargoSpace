@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/User Interface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Other/Finish_Point.tscn" type="PackedScene" id=2]
@@ -9,16 +9,20 @@
 [ext_resource path="res://Other/Font_Extra_small.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Enemies/Shooter.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/Asteroid.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Other/Health_Powerup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Other/Fuel_Powerup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Other/Rocket_Powerup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Sprites/button_arrow_left.png" type="Texture" id=13]
 
 [node name="Level_5" type="Node"]
 
 [node name="background_03_parallax_01" type="Sprite" parent="."]
-position = Vector2( 426.071, 82.6608 )
+position = Vector2( 268.528, 40.2869 )
 scale = Vector2( 1.37347, 1.37347 )
 texture = ExtResource( 6 )
 
 [node name="Wall_Asteroid" parent="." instance=ExtResource( 5 )]
-position = Vector2( -8.24487, 184.063 )
+position = Vector2( -7.74487, 5.063 )
 
 [node name="Wall_Asteroid2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 32.7551, 184.063 )
@@ -33,7 +37,7 @@ position = Vector2( 112.755, 184.063 )
 position = Vector2( 154.755, 183.063 )
 
 [node name="Wall_Asteroid6" parent="." instance=ExtResource( 5 )]
-position = Vector2( -12.2449, 3.06342 )
+position = Vector2( -36.7181, 29.1224 )
 
 [node name="Wall_Asteroid7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 28.7551, 3.06342 )
@@ -717,7 +721,7 @@ position = Vector2( 856.528, 187.616 )
 rotation = 0.95667
 
 [node name="Wall_Asteroid146" parent="." instance=ExtResource( 5 )]
-position = Vector2( 689.528, 7.61581 )
+position = Vector2( 692.865, 14.29 )
 rotation = 0.95667
 
 [node name="Wall_Asteroid147" parent="." instance=ExtResource( 5 )]
@@ -1030,7 +1034,7 @@ position = Vector2( -18.5945, -490.618 )
 position = Vector2( -252.134, -498.043 )
 
 [node name="Wall_Asteroid219" parent="." instance=ExtResource( 5 )]
-position = Vector2( -272.157, -775.905 )
+position = Vector2( -271.45, -766.005 )
 
 [node name="Wall_Asteroid220" parent="." instance=ExtResource( 5 )]
 position = Vector2( -268.271, -730.204 )
@@ -1084,16 +1088,16 @@ position = Vector2( -15.856, -422.009 )
 position = Vector2( -10.6219, -386.785 )
 
 [node name="Wall_Asteroid647" parent="." instance=ExtResource( 5 )]
-position = Vector2( -10.8594, 146.963 )
+position = Vector2( -5.8594, 183.963 )
 
 [node name="Wall_Asteroid648" parent="." instance=ExtResource( 5 )]
-position = Vector2( -18.1973, 110.947 )
+position = Vector2( -22.6973, 145.947 )
 
 [node name="Wall_Asteroid649" parent="." instance=ExtResource( 5 )]
-position = Vector2( -27.1697, 36.1966 )
+position = Vector2( -25.1697, 65.1966 )
 
 [node name="Wall_Asteroid650" parent="." instance=ExtResource( 5 )]
-position = Vector2( -21.9356, 71.4198 )
+position = Vector2( -24.4356, 104.42 )
 
 [node name="Wall_Asteroid651" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1.86853, 605.169 )
@@ -1433,7 +1437,7 @@ rotation = -1.5342
 position = Vector2( -25.4029, 419.37 )
 
 [node name="Wall_Asteroid275" parent="." instance=ExtResource( 5 )]
-position = Vector2( -39.4211, 189.328 )
+position = Vector2( -40.4211, 194.328 )
 
 [node name="Wall_Asteroid276" parent="." instance=ExtResource( 5 )]
 position = Vector2( -37.8337, 232.188 )
@@ -1867,7 +1871,7 @@ position = Vector2( 56.2689, -948.713 )
 rotation = 0.365799
 
 [node name="Wall_Asteroid484" parent="." instance=ExtResource( 5 )]
-position = Vector2( 150.711, -935.002 )
+position = Vector2( 158.262, -934.058 )
 
 [node name="Wall_Asteroid485" parent="." instance=ExtResource( 5 )]
 position = Vector2( 197.374, -935.946 )
@@ -2393,7 +2397,7 @@ position = Vector2( -211.124, 166.677 )
 position = Vector2( -514.318, 480.983 )
 
 [node name="Shooter3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -512.73, 582.576 )
+position = Vector2( -573.206, 501.941 )
 
 [node name="Shooter4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 19.0489, 915.93 )
@@ -2402,6 +2406,10 @@ rotation = 2.37061
 [node name="Shooter5" parent="." instance=ExtResource( 8 )]
 position = Vector2( 613.019, 435.098 )
 rotation = 2.37061
+
+[node name="Shooter9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1104.24, 536.546 )
+rotation = 5.42288
 
 [node name="Shooter6" parent="." instance=ExtResource( 8 )]
 position = Vector2( 188.755, 112.657 )
@@ -2613,3 +2621,144 @@ rotation = -3.20874
 [node name="Asteroid51" parent="." instance=ExtResource( 9 )]
 position = Vector2( -414.513, -835.364 )
 rotation = -3.20874
+
+[node name="Health_Powerup" parent="." instance=ExtResource( 10 )]
+position = Vector2( -293.925, -422.955 )
+
+[node name="Health_Powerup8" parent="." instance=ExtResource( 10 )]
+position = Vector2( -691.707, -708.611 )
+
+[node name="Health_Powerup9" parent="." instance=ExtResource( 10 )]
+position = Vector2( -722.409, -707.276 )
+
+[node name="Health_Powerup10" parent="." instance=ExtResource( 10 )]
+position = Vector2( -227.183, -190.693 )
+
+[node name="Health_Powerup11" parent="." instance=ExtResource( 10 )]
+position = Vector2( -93.5122, -208.706 )
+
+[node name="Health_Powerup13" parent="." instance=ExtResource( 10 )]
+position = Vector2( 55.9898, 111.655 )
+
+[node name="Health_Powerup14" parent="." instance=ExtResource( 10 )]
+position = Vector2( -26.7703, 648.261 )
+
+[node name="Health_Powerup15" parent="." instance=ExtResource( 10 )]
+position = Vector2( 82.6866, -890.809 )
+
+[node name="Health_Powerup12" parent="." instance=ExtResource( 10 )]
+position = Vector2( -191.081, -206.261 )
+
+[node name="Health_Powerup2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -434.355, 151.378 )
+
+[node name="Health_Powerup3" parent="." instance=ExtResource( 10 )]
+position = Vector2( -760.623, 506.236 )
+
+[node name="Health_Powerup4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 151.75, 916.594 )
+
+[node name="Health_Powerup5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 63.4556, 555.849 )
+
+[node name="Health_Powerup6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 504.085, 303.58 )
+
+[node name="Health_Powerup7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 519.997, -600.162 )
+
+[node name="Fuel_Powerup" parent="." instance=ExtResource( 11 )]
+position = Vector2( 62.7677, 532.817 )
+
+[node name="Fuel_Powerup2" parent="." instance=ExtResource( 11 )]
+position = Vector2( -787.224, 261.401 )
+
+[node name="Fuel_Powerup3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -761.224, 271.401 )
+
+[node name="Fuel_Powerup4" parent="." instance=ExtResource( 11 )]
+position = Vector2( -194.521, 669.838 )
+
+[node name="Fuel_Powerup5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 46.7636, 68.2134 )
+
+[node name="Fuel_Powerup6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 38.8266, -422.293 )
+
+[node name="Fuel_Powerup7" parent="." instance=ExtResource( 11 )]
+position = Vector2( 692.836, -430.23 )
+
+[node name="Rocket_Powerup" parent="." instance=ExtResource( 12 )]
+position = Vector2( -387.095, 60.1109 )
+
+[node name="Rocket_Powerup2" parent="." instance=ExtResource( 12 )]
+position = Vector2( -186.754, 849.17 )
+
+[node name="Rocket_Powerup3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 459.186, 387.317 )
+
+[node name="button_arrow_left" type="Sprite" parent="."]
+position = Vector2( -654.769, -355.461 )
+rotation = -0.570112
+scale = Vector2( 0.932381, 0.529269 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left3" type="Sprite" parent="."]
+position = Vector2( -619.589, 562.193 )
+rotation = -0.570112
+scale = Vector2( 0.830851, 0.455218 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left4" type="Sprite" parent="."]
+position = Vector2( -254.212, 980.487 )
+rotation = -3.16271
+scale = Vector2( 0.830851, 0.455218 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left5" type="Sprite" parent="."]
+position = Vector2( 582.326, 631.301 )
+rotation = -4.72211
+scale = Vector2( 0.830851, 0.455218 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left6" type="Sprite" parent="."]
+position = Vector2( 577.281, 188.99 )
+rotation = -4.72211
+scale = Vector2( 0.830851, 0.455218 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left7" type="Sprite" parent="."]
+position = Vector2( 580.645, -263.412 )
+rotation = -4.72211
+scale = Vector2( 0.830851, 0.455218 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left9" type="Sprite" parent="."]
+position = Vector2( 1145.52, -547.633 )
+rotation = -1.63448
+scale = Vector2( 0.830851, 0.455218 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left10" type="Sprite" parent="."]
+position = Vector2( 1215.01, 125.886 )
+rotation = -1.63448
+scale = Vector2( 0.830851, 0.455218 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left11" type="Sprite" parent="."]
+position = Vector2( 1234.61, 441.265 )
+rotation = -1.63448
+scale = Vector2( 0.830851, 0.455218 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left8" type="Sprite" parent="."]
+position = Vector2( 593.726, -802.123 )
+rotation = -3.5377
+scale = Vector2( 0.830851, 0.455218 )
+texture = ExtResource( 13 )
+
+[node name="button_arrow_left2" type="Sprite" parent="."]
+position = Vector2( -293.915, 112.795 )
+rotation = -2.68683
+scale = Vector2( 0.917791, 0.468613 )
+texture = ExtResource( 13 )

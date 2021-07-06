@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 onready var bullet = preload("res://Player/Bullet.tscn")
+onready var rocket = preload("res://Player/Rocket.tscn")
 var velo = Vector2()
 export var rotation_speed = 7.5
 export var xspeed = 0
@@ -16,10 +17,13 @@ var no_fuel = false
 var motion = Vector2.ZERO
 var can_fire = true
 
+
 func _ready():
-	$Fuel_Timer.start()
+	PlayerStats.has_rocket = 0
+	no_fuel = false
 	PlayerStats.fuel = 100
 	PlayerStats.health = 100
+	$Fuel_Timer.start()
 
 
 
@@ -64,11 +68,20 @@ func _process(delta):
 		elif Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
 			rot_dir = 0
 	if Input.is_action_pressed("ui_player_fire") and can_fire == true:
-		can_fire = false
-		var new_bullet = bullet.instance()
-		new_bullet.global_transform = $Position2D.global_transform
-		get_parent().add_child(new_bullet)
-		$Gun_Timer.start()
+		if PlayerStats.has_rocket == 1:
+			can_fire = false
+			PlayerStats.change_rocket(-1)
+			var new_rocket = rocket.instance()
+			new_rocket.global_transform = $Position2D.global_transform
+			get_parent().add_child(new_rocket)
+			$RocketTimer.start()
+			
+		else:
+			can_fire = false
+			var new_bullet = bullet.instance()
+			new_bullet.global_transform = $Position2D.global_transform
+			get_parent().add_child(new_bullet)
+			$Gun_Timer.start()
 		#if no_fuel == false:
 			#velo = Vector2(speed_limit, 0).rotated(rotation)
 #		move_vec = move_vec.normalize()
@@ -192,7 +205,11 @@ func _on_Fuel_Timer_timeout():
 	PlayerStats.change_fuel(-1)
 	if not PlayerStats.has_fuel():
 		no_fuel = true
-	$ExtraTimeTimer.start()
+		print("hello")
+		$Fuel_Timer.stop()
+	if no_fuel == true:
+		print("extra time")
+		$ExtraTimeTimer.start()
 
 func apply_movement(acceleration):
 	motion += acceleration
@@ -209,6 +226,7 @@ func _on_Gun_Timer_timeout():
 	can_fire = true
 
 
+
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Asteroid"):
 		PlayerStats.change_health(-15)
@@ -221,4 +239,10 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_ExtraTimeTimer_timeout():
+	print("end game")
 	get_tree().change_scene("res://Other/Game_Over.tscn")
+	
+
+
+func _on_RocketTimer_timeout():
+	can_fire = true

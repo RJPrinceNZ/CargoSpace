@@ -11,6 +11,7 @@ var can_fire = true
 
 func _physics_process(delta):
 	if hp <= 0:
+		can_fire = false
 		$AnimationPlayer.play("Death")
 		yield($AnimationPlayer,"animation_finished")
 		queue_free()
@@ -49,7 +50,8 @@ func _on_DamageBox_body_entered(body):
 		hp = 0
 	if body.is_in_group("Bullet"):
 		hp += -20
-
+	if body.is_in_group("Rocket"):
+		hp = 0
 
 func _on_Area2D_body_exited(body):
 	if body.name == "Player":
@@ -58,3 +60,8 @@ func _on_Area2D_body_exited(body):
 
 func _on_Out_of_range_timer_timeout():
 	follow_player = false
+
+
+func _on_DamageBox_area_entered(area):
+	if area.is_in_group("Explosion"):
+		hp = 0

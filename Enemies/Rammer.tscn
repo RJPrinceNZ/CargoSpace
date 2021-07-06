@@ -244,4 +244,5 @@ texture = ExtResource( 4 )
 hframes = 9
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="DamageBox" to="." method="_on_DamageBox_area_entered"]
 [connection signal="body_entered" from="DamageBox" to="." method="_on_DamageBox_body_entered"]

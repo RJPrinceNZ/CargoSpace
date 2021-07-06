@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/User_Interface.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/powerup_10.png" type="Texture" id=2]
 [ext_resource path="res://Other/Font_Extra_small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Sprites/powerup_09.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/powerups.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.890196, 0.588235, 0, 1 )
@@ -60,6 +61,36 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 10
+
+[sub_resource type="Animation" id=5]
+resource_name = "No_Rocket"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rocket:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Yes_Rocket"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rocket:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ) ]
+}
 
 [node name="User Interface" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -136,6 +167,18 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Rocket" type="Sprite" parent="."]
+position = Vector2( 53.888, 167.125 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 5 )
+hframes = 4
+vframes = 4
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/No_Rocket = SubResource( 5 )
+anims/Yes_Rocket = SubResource( 6 )
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]

@@ -126,14 +126,6 @@ position = Vector2( 253.447, 14.8672 )
 [node name="Wall_Asteroid37" parent="." instance=ExtResource( 1 )]
 position = Vector2( 289.769, 48.2602 )
 
-[node name="Wall_Asteroid38" parent="." instance=ExtResource( 1 )]
-position = Vector2( 156.767, -15.5419 )
-rotation = -0.0903434
-
-[node name="Wall_Asteroid39" parent="." instance=ExtResource( 1 )]
-position = Vector2( 207.067, -0.75774 )
-rotation = -0.0903434
-
 [node name="Wall_Asteroid40" parent="." instance=ExtResource( 1 )]
 position = Vector2( 11.1225, -52.8411 )
 rotation = -0.0903434
@@ -153,10 +145,6 @@ position = Vector2( -84.2602, -81.369 )
 
 [node name="Wall_Asteroid45" parent="." instance=ExtResource( 1 )]
 position = Vector2( -35.4655, -64.9032 )
-
-[node name="Wall_Asteroid46" parent="." instance=ExtResource( 1 )]
-position = Vector2( -180.941, -111.778 )
-rotation = -0.0903434
 
 [node name="Wall_Asteroid47" parent="." instance=ExtResource( 1 )]
 position = Vector2( -130.64, -96.9941 )
@@ -297,14 +285,6 @@ rotation = 2.04003
 
 [node name="Wall_Asteroid79" parent="." instance=ExtResource( 1 )]
 position = Vector2( -200.481, 39.701 )
-rotation = -0.0903434
-
-[node name="Wall_Asteroid48" parent="." instance=ExtResource( 1 )]
-position = Vector2( -84.2603, -81.3691 )
-rotation = -0.0903434
-
-[node name="Wall_Asteroid49" parent="." instance=ExtResource( 1 )]
-position = Vector2( -35.4656, -64.9032 )
 rotation = -0.0903434
 
 [node name="Wall_Asteroid50" parent="." instance=ExtResource( 1 )]
@@ -566,13 +546,13 @@ position = Vector2( -651.953, 229.103 )
 position = Vector2( 46.3807, 51.5352 )
 
 [node name="Shooter2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 178.486, -86.7815 )
+position = Vector2( 203.486, -97.7815 )
 
 [node name="Shooter3" parent="." instance=ExtResource( 2 )]
-position = Vector2( -4.06391, -144.742 )
+position = Vector2( 10.9361, -151.242 )
 
 [node name="Shooter4" parent="." instance=ExtResource( 2 )]
-position = Vector2( -101.93, -2.71158 )
+position = Vector2( -97.43, -3.21158 )
 
 [node name="Rammer" parent="." instance=ExtResource( 5 )]
 position = Vector2( 13.5645, 256.487 )
@@ -680,10 +660,10 @@ position = Vector2( 211.382, 281.51 )
 position = Vector2( 232.689, 296.294 )
 
 [node name="Rammer4" parent="." instance=ExtResource( 5 )]
-position = Vector2( -252.459, -138.533 )
+position = Vector2( -256.005, -150.788 )
 
 [node name="Rammer5" parent="." instance=ExtResource( 5 )]
-position = Vector2( -213.707, -174.023 )
+position = Vector2( -221.35, -202.957 )
 
 [node name="Asteroid31" parent="." instance=ExtResource( 6 )]
 position = Vector2( -356.784, -211.428 )
