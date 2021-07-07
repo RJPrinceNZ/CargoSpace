@@ -27,7 +27,7 @@ radius = 2.68388
 height = 5.37574
 
 [sub_resource type="CircleShape2D" id=7]
-radius = 103.162
+radius = 91.3449
 
 [sub_resource type="Animation" id=8]
 resource_name = "Death"
@@ -167,7 +167,7 @@ shape = SubResource( 7 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Area2D"]
 rotation = -1.5708
-scale = Vector2( 1, 1.78 )
+scale = Vector2( 1, 1.58 )
 
 [node name="WO84-wu-X1" type="Sprite" parent="."]
 rotation = 1.5708
