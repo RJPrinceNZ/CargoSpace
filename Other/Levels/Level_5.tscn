@@ -2353,7 +2353,7 @@ position = Vector2( 1235.15, 571.008 )
 rotation = 4.68366
 
 [node name="Rammer14" parent="." instance=ExtResource( 4 )]
-position = Vector2( 531.477, -394.716 )
+position = Vector2( 539.477, -322.716 )
 rotation = 1.62705
 
 [node name="Rammer15" parent="." instance=ExtResource( 4 )]

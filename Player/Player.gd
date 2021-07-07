@@ -68,9 +68,10 @@ func _process(delta):
 		elif Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
 			rot_dir = 0
 	if Input.is_action_pressed("ui_player_fire") and can_fire == true:
-		if PlayerStats.has_rocket == 1:
+		if PlayerStats.has_rocket > 0:
 			can_fire = false
-			PlayerStats.change_rocket(-1)
+			print(can_fire)
+			PlayerStats.set_rocket(0)
 			var new_rocket = rocket.instance()
 			new_rocket.global_transform = $Position2D.global_transform
 			get_parent().add_child(new_rocket)
@@ -246,3 +247,4 @@ func _on_ExtraTimeTimer_timeout():
 
 func _on_RocketTimer_timeout():
 	can_fire = true
+	print("timerend")

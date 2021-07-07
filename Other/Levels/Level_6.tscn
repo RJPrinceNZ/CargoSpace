@@ -2012,3 +2012,6 @@ position = Vector2( 676.844, 173.622 )
 position = Vector2( 947.666, -80.9364 )
 
 [node name="User Interface" parent="." instance=ExtResource( 3 )]
+
+[node name="Fuel_Powerup8" parent="." instance=ExtResource( 12 )]
+position = Vector2( 997.661, -374.504 )
