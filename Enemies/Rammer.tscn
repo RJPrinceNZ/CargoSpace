@@ -6,14 +6,14 @@
 [ext_resource path="res://Sprites/explosion_big.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 10.6513
+radius = 8.81955
 height = 1.9928
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 94.631
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 13.2528
+radius = 10.6607
 height = 4.37149
 
 [sub_resource type="Animation" id=4]
@@ -78,6 +78,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 2.70739, 0 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("DamageBox:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Idle"
@@ -128,6 +140,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DamageBox:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -192,6 +216,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0.125, 0.125 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("DamageBox:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [node name="Rammer" type="KinematicBody2D" groups=[
