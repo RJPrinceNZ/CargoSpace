@@ -1,22 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Other/Font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Other/Font_Extra_small.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Game_Over.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/powerup_10.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/background_03_parallax_01.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/powerup_09.png" type="Texture" id=6]
 
 [node name="Game_Over" type="Node"]
 script = ExtResource( 3 )
 
+[node name="background_03_parallax_01" type="Sprite" parent="."]
+position = Vector2( 144.877, 78.174 )
+rotation = -0.431453
+texture = ExtResource( 5 )
+
 [node name="Button" type="Button" parent="."]
-margin_left = 48.7828
-margin_top = 144.707
-margin_right = 271.783
-margin_bottom = 168.707
+margin_left = 49.0
+margin_top = 145.0
+margin_right = 293.0
+margin_bottom = 169.0
 custom_fonts/font = ExtResource( 2 )
 text = "Return to Level Select"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="powerup_09" type="Sprite" parent="Button"]
+position = Vector2( 14.4668, 11.3666 )
+scale = Vector2( 0.332, 0.332 )
+texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 38.5814
@@ -30,15 +44,23 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 98.5294
-margin_top = 109.499
-margin_right = 213.529
-margin_bottom = 129.499
+margin_left = 102.0
+margin_top = 110.0
+margin_right = 221.0
+margin_bottom = 132.0
 custom_fonts/font = ExtResource( 2 )
 text = "Try Again?"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="powerup_10" type="Sprite" parent="Button2"]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 12.2115, 11.3529 )
+scale = Vector2( 0.332276, 0.332276 )
+texture = ExtResource( 4 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

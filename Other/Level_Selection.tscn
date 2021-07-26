@@ -1,18 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Other/Level_Selection.gd" type="Script" id=1]
 [ext_resource path="res://Other/Font_small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/button_arrow_left.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/background_01_parallax_01.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/buttons.png" type="Texture" id=5]
 
 [node name="Level_Selection" type="Node"]
 script = ExtResource( 1 )
 
+[node name="background_01_parallax_01" type="Sprite" parent="."]
+position = Vector2( -142.355, 216.793 )
+rotation = -0.785397
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )
+
 [node name="Button" type="Button" parent="."]
-margin_left = 14.2542
-margin_top = 97.4036
-margin_right = 43.2542
-margin_bottom = 126.404
+margin_left = 13.9299
+margin_top = 96.2684
+margin_right = 44.9299
+margin_bottom = 124.268
 custom_fonts/font = ExtResource( 2 )
 text = "1"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -24,6 +34,7 @@ margin_right = 95.0
 margin_bottom = 87.0
 custom_fonts/font = ExtResource( 2 )
 text = "2"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,6 +46,7 @@ margin_right = 146.371
 margin_bottom = 127.404
 custom_fonts/font = ExtResource( 2 )
 text = "3"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,9 +55,10 @@ __meta__ = {
 margin_left = 171.0
 margin_top = 53.0
 margin_right = 203.0
-margin_bottom = 84.0
+margin_bottom = 83.0
 custom_fonts/font = ExtResource( 2 )
 text = "4"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -57,31 +70,81 @@ margin_right = 259.0
 margin_bottom = 131.0
 custom_fonts/font = ExtResource( 2 )
 text = "5"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button6" type="Button" parent="."]
-margin_left = 279.0
-margin_top = 57.0
-margin_right = 310.0
-margin_bottom = 87.0
+margin_left = 277.066
+margin_top = 56.0
+margin_right = 310.066
+margin_bottom = 86.0
 custom_fonts/font = ExtResource( 2 )
 text = "6"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Back" type="Button" parent="."]
-margin_left = 235.251
-margin_top = 1.24746
-margin_right = 319.251
-margin_bottom = 25.2475
+margin_left = 216.708
+margin_top = 3.71243
+margin_right = 317.708
+margin_bottom = 27.7124
 custom_fonts/font = ExtResource( 2 )
 text = "Back"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="button_arrow_left" type="Sprite" parent="Back"]
+position = Vector2( 13.4641, 11.3372 )
+scale = Vector2( 0.246423, 0.246423 )
+texture = ExtResource( 3 )
+
+[node name="buttons" type="Sprite" parent="."]
+position = Vector2( 29.2975, 109.112 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+hframes = 5
+frame = 2
+
+[node name="buttons2" type="Sprite" parent="."]
+position = Vector2( 78.4052, 72.0703 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+hframes = 5
+frame = 2
+
+[node name="buttons3" type="Sprite" parent="."]
+position = Vector2( 129.758, 111.76 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+hframes = 5
+frame = 2
+
+[node name="buttons4" type="Sprite" parent="."]
+position = Vector2( 187.845, 67.4223 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+hframes = 5
+frame = 3
+
+[node name="buttons5" type="Sprite" parent="."]
+position = Vector2( 242.846, 115.514 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+hframes = 5
+frame = 1
+
+[node name="buttons6" type="Sprite" parent="."]
+position = Vector2( 292.795, 70.2285 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+hframes = 5
+frame = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
