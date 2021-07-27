@@ -17,12 +17,4 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Other/Level_Selection.tscn")
-
-
-func _on_Button2_pressed():
-	get_tree().quit()
-
-
-func _on_Button3_pressed():
-	get_tree().change_scene("res://Other/How_to_Play.tscn")
+	get_tree().change_scene("res://Other/Title.tscn")
