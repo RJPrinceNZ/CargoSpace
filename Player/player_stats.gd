@@ -14,6 +14,7 @@ func _ready():
 	fuel = 100
 	fuel_max = 100
 
+
 func change_health(amount):
 	health += amount
 	health = clamp(health,0,health_max)

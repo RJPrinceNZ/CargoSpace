@@ -123,7 +123,7 @@ position = Vector2( 129.758, 111.76 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 5 )
 hframes = 5
-frame = 2
+frame = 3
 
 [node name="buttons4" type="Sprite" parent="."]
 position = Vector2( 187.845, 67.4223 )

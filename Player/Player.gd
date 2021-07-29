@@ -26,7 +26,6 @@ func _ready():
 	$Fuel_Timer.start()
 
 
-
 func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
 

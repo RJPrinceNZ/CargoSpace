@@ -18,6 +18,5 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
-		if not PlayerStats.get_health() >= 100:
-			PlayerStats.change_health(25)
-			queue_free()
+		PlayerStats.change_health(25)
+		queue_free()
