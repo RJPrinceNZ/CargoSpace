@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+onready var explosion = preload("res://Enemies/Explosion.tscn")
 onready var bullet = preload("res://Player/Bullet.tscn")
 onready var rocket = preload("res://Player/Rocket.tscn")
 var velo = Vector2()
@@ -32,8 +32,9 @@ func get_vector(angle):
 func _process(delta):
 	
 	if PlayerStats.get_health() <= 0:
-		$AnimationPlayer.play("Dying")
-		yield($AnimationPlayer,"animation_finished")
+		var new_explosion = explosion.instance()
+		get_parent().add_child(new_explosion)
+		new_explosion.global_position = global_position
 		get_tree().change_scene("res://Other/Game_Over.tscn")
 	motion = move_and_slide(motion)
 	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
@@ -79,6 +80,7 @@ func _process(delta):
 		else:
 			can_fire = false
 			var new_bullet = bullet.instance()
+			SoundPlayer.play("res://Sound/mixkit-short-laser-gun-shot-1670.wav")
 			new_bullet.global_transform = $Position2D.global_transform
 			get_parent().add_child(new_bullet)
 			$Gun_Timer.start()
@@ -247,3 +249,4 @@ func _on_ExtraTimeTimer_timeout():
 func _on_RocketTimer_timeout():
 	can_fire = true
 	print("timerend")
+

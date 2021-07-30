@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+onready var explosion = preload("res://Enemies/Explosion.tscn")
 onready var bullet = preload("res://Enemies/Enemy_Bullet.tscn")
 var player
 var follow_player = false
@@ -12,8 +12,10 @@ var can_fire = true
 func _physics_process(delta):
 	if hp <= 0:
 		can_fire = false
-		$AnimationPlayer.play("Death")
-		yield($AnimationPlayer,"animation_finished")
+		SoundPlayer.play("res://Sound/mixkit-fast-game-explosion-1688.wav")
+		var new_explosion = explosion.instance()
+		get_parent().add_child(new_explosion)
+		new_explosion.global_position = global_position
 		queue_free()
 	if follow_player == true:
 		look_at(player.position)

@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerStats="*res://Player/player_stats.gd"
+SoundPlayer="*res://Other/Sound_player.gd"
 
 [display]
 
