@@ -7,6 +7,7 @@ var is_fired = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SoundPlayer.play("res://Sound/mixkit-short-laser-gun-shot-1670.wav")
 	add_to_group("ignore")
 
 func _physics_process(delta):
