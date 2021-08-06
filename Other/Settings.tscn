@@ -13,7 +13,9 @@ margin_left = 39.7892
 margin_top = 28.3997
 margin_right = 286.789
 margin_bottom = 44.3997
-value = 50.0
+max_value = 2.0
+step = 0.1
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -24,6 +26,7 @@ margin_top = 75.0847
 margin_right = 286.789
 margin_bottom = 91.0847
 max_value = 2.0
+step = 0.1
 value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -40,46 +43,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="."]
-margin_left = 150.67
-margin_top = 44.3997
-margin_right = 174.67
-margin_bottom = 53.3997
-custom_fonts/font = ExtResource( 1 )
-text = "50"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label5" type="Label" parent="."]
-margin_left = 267.67
-margin_top = 42.3997
-margin_right = 295.67
-margin_bottom = 51.3997
+[node name="Label6" type="Label" parent="."]
+margin_left = 147.756
+margin_top = 91.0847
+margin_right = 175.756
+margin_bottom = 100.085
 custom_fonts/font = ExtResource( 1 )
 text = "100"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label4" type="Label" parent="."]
-margin_left = 37.0
-margin_top = 42.3997
-margin_right = 49.0
-margin_bottom = 51.3997
-custom_fonts/font = ExtResource( 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label6" type="Label" parent="."]
-margin_left = 150.67
-margin_top = 93.0847
-margin_right = 174.67
-margin_bottom = 102.085
-custom_fonts/font = ExtResource( 1 )
-text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -87,10 +57,10 @@ __meta__ = {
 [node name="Label7" type="Label" parent="."]
 margin_left = 267.67
 margin_top = 91.0847
-margin_right = 295.67
+margin_right = 302.67
 margin_bottom = 100.085
 custom_fonts/font = ExtResource( 1 )
-text = "100"
+text = "200"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -100,6 +70,39 @@ margin_left = 37.0
 margin_top = 91.0847
 margin_right = 49.0
 margin_bottom = 100.085
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="."]
+margin_left = 147.756
+margin_top = 44.3997
+margin_right = 175.756
+margin_bottom = 53.4
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label10" type="Label" parent="."]
+margin_left = 267.67
+margin_top = 44.3997
+margin_right = 302.67
+margin_bottom = 53.4
+custom_fonts/font = ExtResource( 1 )
+text = "200"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label11" type="Label" parent="."]
+margin_left = 37.0
+margin_top = 44.3997
+margin_right = 49.0
+margin_bottom = 53.4
 custom_fonts/font = ExtResource( 1 )
 text = "0"
 __meta__ = {
@@ -134,6 +137,18 @@ position = Vector2( 15.0479, 11.5162 )
 scale = Vector2( 0.246, 0.246 )
 texture = ExtResource( 3 )
 
+[node name="Button2" type="Button" parent="."]
+margin_left = 107.422
+margin_top = 104.244
+margin_right = 216.422
+margin_bottom = 124.244
+custom_fonts/font = ExtResource( 1 )
+text = "Test Sound"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="HSlider2" to="." method="_on_HSlider2_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

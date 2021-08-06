@@ -25,3 +25,7 @@ func _on_HSlider_value_changed(value):
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Other/Title.tscn")
+
+
+func _on_Button2_pressed():
+	SoundPlayer.play("res://Sound/mixkit-short-laser-gun-shot-1670.wav")

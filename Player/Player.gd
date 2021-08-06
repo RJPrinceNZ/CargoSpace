@@ -30,7 +30,6 @@ func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
 
 func _process(delta):
-	
 	if PlayerStats.get_health() <= 0:
 		var new_explosion = explosion.instance()
 		get_parent().add_child(new_explosion)

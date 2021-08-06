@@ -9,6 +9,7 @@ func play(sound):
 	audio_stream.stream = load(sound)
 	audio_stream.play()
 	
+	
 func set_volume(volume):
 	current_volume= linear2db(volume)
 	
