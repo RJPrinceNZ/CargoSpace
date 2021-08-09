@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/DKO-api-X1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/spaceship_flame.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/explosion_big.png" type="Texture" id=4]
-[ext_resource path="res://Sound/mixkit-industrial-machine-engine-hum-loop-3178.wav" type="AudioStream" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 2.90868
@@ -214,10 +213,6 @@ one_shot = true
 [node name="RocketTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-autoplay = true
 
 [connection signal="timeout" from="Fuel_Timer" to="." method="_on_Fuel_Timer_timeout"]
 [connection signal="timeout" from="Gun_Timer" to="." method="_on_Gun_Timer_timeout"]

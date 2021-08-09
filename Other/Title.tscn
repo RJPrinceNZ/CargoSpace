@@ -20,6 +20,7 @@ margin_top = 62.837
 margin_right = 219.689
 margin_bottom = 97.837
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -31,6 +32,7 @@ margin_top = 33.837
 margin_right = 304.943
 margin_bottom = 62.837
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "CARGO SPACE"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -42,6 +44,7 @@ margin_top = 153.811
 margin_right = 197.298
 margin_bottom = 177.811
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,17 +56,19 @@ margin_top = 100.508
 margin_right = 219.689
 margin_bottom = 124.508
 custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "How to Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button4" type="Button" parent="."]
-margin_left = 95.0186
+margin_left = 94.0186
 margin_top = 128.175
-margin_right = 227.019
+margin_right = 226.019
 margin_bottom = 152.175
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false

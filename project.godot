@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 
 PlayerStats="*res://Player/player_stats.gd"
 SoundPlayer="*res://Other/Sound_player.gd"
+MusicPlayer="*res://Sound/MusicPlayer.tscn"
 
 [display]
 

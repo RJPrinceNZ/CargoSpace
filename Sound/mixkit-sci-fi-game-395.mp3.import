@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixkit-sci-fi-game-395.mp3-2c89098319ae37c595f4d1bfc30239bc.mp3str"
+
+[deps]
+
+source_file="res://Sound/mixkit-sci-fi-game-395.mp3"
+dest_files=[ "res://.import/mixkit-sci-fi-game-395.mp3-2c89098319ae37c595f4d1bfc30239bc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

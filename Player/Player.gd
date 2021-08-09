@@ -19,6 +19,7 @@ var can_fire = true
 
 
 func _ready():
+	MusicPlayer.change_music(MusicPlayer.song1)
 	PlayerStats.has_rocket = 0
 	no_fuel = false
 	PlayerStats.fuel = 100
@@ -79,7 +80,7 @@ func _process(delta):
 		else:
 			can_fire = false
 			var new_bullet = bullet.instance()
-			SoundPlayer.play("res://Sound/mixkit-short-laser-gun-shot-1670.wav")
+			SoundPlayer.play(SoundPlayer.sound1)
 			new_bullet.global_transform = $Position2D.global_transform
 			get_parent().add_child(new_bullet)
 			$Gun_Timer.start()
