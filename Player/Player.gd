@@ -80,7 +80,7 @@ func _process(delta):
 		else:
 			can_fire = false
 			var new_bullet = bullet.instance()
-			SoundPlayer.play(SoundPlayer.sound1)
+			SoundPlayer.play(SoundPlayer.shoot1)
 			new_bullet.global_transform = $Position2D.global_transform
 			get_parent().add_child(new_bullet)
 			$Gun_Timer.start()

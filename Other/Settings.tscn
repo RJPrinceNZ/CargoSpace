@@ -148,6 +148,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label3" type="Label" parent="."]
+margin_left = 93.0
+margin_top = 21.0
+margin_right = 133.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 1 )
+text = "100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 100.151
+margin_top = 63.9977
+margin_right = 140.151
+margin_bottom = 72.9977
+custom_fonts/font = ExtResource( 1 )
+text = "100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="HSlider2" to="." method="_on_HSlider2_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

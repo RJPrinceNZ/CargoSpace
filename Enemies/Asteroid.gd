@@ -11,7 +11,7 @@ func _process(delta):
 		var new_explosion = explosion.instance()
 		get_parent().add_child(new_explosion)
 		new_explosion.global_position = global_position
-		SoundPlayer.play("res://Sound/mixkit-fast-game-explosion-1688.wav")
+		SoundPlayer.play(SoundPlayer.explosion1)
 		queue_free()
 	else:
 		$AnimationPlayer.play("Idle")

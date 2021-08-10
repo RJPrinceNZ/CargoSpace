@@ -1,31 +1,25 @@
 extends Node
 
+var Music_Volume = "100%"
+var Sound_Volume = "100%"
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$HSlider2.value = SoundPlayer.current_volume
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_HSlider2_value_changed(value):
 	SoundPlayer.set_volume(value)
-
+	Sound_Volume = str(value*100,"%")
 func _on_HSlider_value_changed(value):
-	pass # Replace with function body.
-
+	MusicPlayer.change_volume(value)
+	Music_Volume = str(value*100,"%")
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Other/Title.tscn")
 
 
 func _on_Button2_pressed():
-	SoundPlayer.play("res://Sound/mixkit-short-laser-gun-shot-1670.wav")
+	SoundPlayer.play(SoundPlayer.shoot1)
+
+func _process(delta):
+	$Label3.set_text(Music_Volume)
+	$Label4.set_text(Sound_Volume)

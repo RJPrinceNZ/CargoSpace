@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if hp <= 0:
-		SoundPlayer.play("res://Sound/mixkit-fast-game-explosion-1688.wav")
+		SoundPlayer.play(SoundPlayer.explosion1)
 		var new_explosion = explosion.instance()
 		get_parent().add_child(new_explosion)
 		new_explosion.global_position = global_position

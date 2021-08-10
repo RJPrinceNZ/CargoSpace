@@ -8,6 +8,7 @@ var is_fired = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SoundPlayer.play(SoundPlayer.launch1)
 	add_to_group("ignore")
 	pass
 
@@ -22,7 +23,7 @@ func _process(delta):
 func _on_Hit_Box_body_entered(body):
 	if not body.name == "Player" and not body.is_in_group("ignore"):
 		var new_explosion = explosion.instance()
-		SoundPlayer.play("res://Sound/mixkit-fast-game-explosion-1688.wav")
+		SoundPlayer.play(SoundPlayer.explosion1)
 		new_explosion.global_transform = $Position2D.global_transform
 		get_parent().add_child(new_explosion)
 		queue_free()
