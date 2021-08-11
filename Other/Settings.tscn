@@ -1,18 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Other/Font_Extra_small.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Other/Settings.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/button_arrow_left.png" type="Texture" id=3]
 [ext_resource path="res://Other/Font_small.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Sprites/background_menu.jpg" type="Texture" id=5]
 
 [node name="Settings" type="Node"]
 script = ExtResource( 2 )
 
+[node name="background_menu" type="Sprite" parent="."]
+position = Vector2( -111.784, 235.744 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
 [node name="HSlider" type="HSlider" parent="."]
 margin_left = 39.7892
-margin_top = 28.3997
+margin_top = 36.3997
 margin_right = 286.789
-margin_bottom = 44.3997
+margin_bottom = 52.3997
 max_value = 2.0
 step = 0.1
 value = 1.0
@@ -22,9 +28,9 @@ __meta__ = {
 
 [node name="HSlider2" type="HSlider" parent="."]
 margin_left = 39.7892
-margin_top = 75.0847
+margin_top = 83.0847
 margin_right = 286.789
-margin_bottom = 91.0847
+margin_bottom = 99.0847
 max_value = 2.0
 step = 0.1
 value = 1.0
@@ -34,9 +40,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 margin_left = 44.0
-margin_top = 21.0
+margin_top = 29.0
 margin_right = 89.0
-margin_bottom = 30.0
+margin_bottom = 38.0
 custom_fonts/font = ExtResource( 1 )
 text = "Music"
 __meta__ = {
@@ -45,9 +51,9 @@ __meta__ = {
 
 [node name="Label6" type="Label" parent="."]
 margin_left = 147.756
-margin_top = 91.0847
+margin_top = 99.0847
 margin_right = 175.756
-margin_bottom = 100.085
+margin_bottom = 108.085
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 __meta__ = {
@@ -56,9 +62,9 @@ __meta__ = {
 
 [node name="Label7" type="Label" parent="."]
 margin_left = 267.67
-margin_top = 91.0847
+margin_top = 99.0847
 margin_right = 302.67
-margin_bottom = 100.085
+margin_bottom = 108.085
 custom_fonts/font = ExtResource( 1 )
 text = "200"
 __meta__ = {
@@ -67,9 +73,9 @@ __meta__ = {
 
 [node name="Label8" type="Label" parent="."]
 margin_left = 37.0
-margin_top = 91.0847
+margin_top = 99.0847
 margin_right = 49.0
-margin_bottom = 100.085
+margin_bottom = 108.085
 custom_fonts/font = ExtResource( 1 )
 text = "0"
 __meta__ = {
@@ -78,9 +84,9 @@ __meta__ = {
 
 [node name="Label9" type="Label" parent="."]
 margin_left = 147.756
-margin_top = 44.3997
+margin_top = 52.3997
 margin_right = 175.756
-margin_bottom = 53.4
+margin_bottom = 61.4
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 __meta__ = {
@@ -89,9 +95,9 @@ __meta__ = {
 
 [node name="Label10" type="Label" parent="."]
 margin_left = 267.67
-margin_top = 44.3997
+margin_top = 52.3997
 margin_right = 302.67
-margin_bottom = 53.4
+margin_bottom = 61.4
 custom_fonts/font = ExtResource( 1 )
 text = "200"
 __meta__ = {
@@ -100,9 +106,9 @@ __meta__ = {
 
 [node name="Label11" type="Label" parent="."]
 margin_left = 37.0
-margin_top = 44.3997
+margin_top = 52.3997
 margin_right = 49.0
-margin_bottom = 53.4
+margin_bottom = 61.4
 custom_fonts/font = ExtResource( 1 )
 text = "0"
 __meta__ = {
@@ -111,9 +117,9 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 43.0
-margin_top = 63.9977
+margin_top = 71.9977
 margin_right = 96.0
-margin_bottom = 72.9977
+margin_bottom = 80.9977
 custom_fonts/font = ExtResource( 1 )
 text = "Sound"
 __meta__ = {
@@ -121,10 +127,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 210.75
-margin_top = 1.25
-margin_right = 316.75
-margin_bottom = 25.25
+margin_left = 208.75
+margin_top = 4.25
+margin_right = 314.75
+margin_bottom = 28.25
 custom_fonts/font = ExtResource( 4 )
 text = "Back"
 align = 2
@@ -139,9 +145,9 @@ texture = ExtResource( 3 )
 
 [node name="Button2" type="Button" parent="."]
 margin_left = 107.422
-margin_top = 104.244
+margin_top = 112.244
 margin_right = 216.422
-margin_bottom = 124.244
+margin_bottom = 132.244
 custom_fonts/font = ExtResource( 1 )
 text = "Test Sound"
 __meta__ = {
@@ -150,9 +156,9 @@ __meta__ = {
 
 [node name="Label3" type="Label" parent="."]
 margin_left = 93.0
-margin_top = 21.0
+margin_top = 29.0
 margin_right = 133.0
-margin_bottom = 30.0
+margin_bottom = 38.0
 custom_fonts/font = ExtResource( 1 )
 text = "100%"
 __meta__ = {
@@ -161,9 +167,9 @@ __meta__ = {
 
 [node name="Label4" type="Label" parent="."]
 margin_left = 100.151
-margin_top = 63.9977
+margin_top = 71.9977
 margin_right = 140.151
-margin_bottom = 72.9977
+margin_bottom = 80.9977
 custom_fonts/font = ExtResource( 1 )
 text = "100%"
 __meta__ = {

@@ -4,15 +4,10 @@
 [ext_resource path="res://Enemies/Asteroid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Wall_Asteroid.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Other/Finish_Point.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sprites/background_01_parallax_01.png" type="Texture" id=5]
+[ext_resource path="res://Backgrounds/Background1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/User Interface.tscn" type="PackedScene" id=6]
 
 [node name="Level_1" type="Node"]
-
-[node name="background_01_parallax_01" type="Sprite" parent="."]
-position = Vector2( 274.8, 25.6363 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
 
 [node name="Asteroid" parent="." instance=ExtResource( 2 )]
 position = Vector2( 333.169, 11.7842 )
@@ -152,3 +147,5 @@ position = Vector2( 503.785, -191.531 )
 position = Vector2( 67.1265, 89.1119 )
 
 [node name="User Interface" parent="." instance=ExtResource( 6 )]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]

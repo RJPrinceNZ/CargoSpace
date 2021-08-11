@@ -4,7 +4,7 @@ onready var shoot1 = preload("res://Sound/mixkit-short-laser-gun-shot-1670.wav")
 onready var explosion1 = preload("res://Sound/mixkit-fast-game-explosion-1688.wav")
 onready var launch1 = preload("res://Sound/mixkit-short-impact-static-3131.wav")
 var current_volume = 1
-
+var vol = 1
 func play(sound):
 	var audio_stream = AudioStreamPlayer.new()
 	audio_stream.volume_db = current_volume#current_volume
@@ -17,4 +17,5 @@ func play(sound):
 	
 func set_volume(volume):
 	current_volume= linear2db(volume)
+	vol = volume
 	
