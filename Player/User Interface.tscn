@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/User_Interface.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/powerup_10.png" type="Texture" id=2]
@@ -62,8 +62,36 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 10
 
-[sub_resource type="Animation" id=5]
-resource_name = "No_Rocket"
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.00784314, 0.317647, 0.486275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.976471, 1, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 10
+anti_aliasing_size = 3
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.203922, 0.203922, 0.203922, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.952941, 1, 1 )
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 10
+
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Rocket:scale")
 tracks/0/interp = 1
@@ -77,8 +105,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Yes_Rocket"
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Rocket:scale")
 tracks/0/interp = 1
@@ -119,6 +146,22 @@ rect_rotation = -89.9999
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 value = 50.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cooldown_Bar" type="ProgressBar" parent="."]
+margin_left = 15.1657
+margin_top = 125.168
+margin_right = 64.1657
+margin_bottom = 135.168
+rect_rotation = -89.9999
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
+max_value = 10.0
+step = 0.1
+value = 5.0
 percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -177,8 +220,8 @@ vframes = 4
 frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/No_Rocket = SubResource( 5 )
-anims/Yes_Rocket = SubResource( 6 )
+anims/No_Rocket = SubResource( 7 )
+anims/Yes_Rocket = SubResource( 8 )
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]

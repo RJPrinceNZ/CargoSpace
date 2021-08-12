@@ -16,7 +16,7 @@ var speed_limit = 500
 var no_fuel = false
 var motion = Vector2.ZERO
 var can_fire = true
-
+var can_cooldown = true
 
 func _ready():
 	MusicPlayer.change_music(MusicPlayer.song1)
@@ -31,6 +31,15 @@ func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
 
 func _process(delta):
+	print(PlayerStats.fire_heat)
+	if PlayerStats.fire_heat >= 10:
+		can_fire = false
+		PlayerStats.cooldown = true
+	if PlayerStats.fire_heat <= 0:
+		PlayerStats.fire_heat = 0
+		can_fire = true
+		PlayerStats.cooldown = false
+		$Cooldown_timer.start()
 	if PlayerStats.get_health() <= 0:
 		var new_explosion = explosion.instance()
 		get_parent().add_child(new_explosion)
@@ -67,23 +76,29 @@ func _process(delta):
 			rot_dir = 92.5
 		elif Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
 			rot_dir = 0
+	if PlayerStats.fire_heat > 0 and can_cooldown == true and not Input.is_action_pressed("ui_player_fire"):
+		can_cooldown = false
+		$Cooldown_timer.start()
+		PlayerStats.fire_heat += -0.2
 	if Input.is_action_pressed("ui_player_fire") and can_fire == true:
-		if PlayerStats.has_rocket > 0:
-			can_fire = false
-			print(can_fire)
-			PlayerStats.set_rocket(0)
-			var new_rocket = rocket.instance()
-			new_rocket.global_transform = $Position2D.global_transform
-			get_parent().add_child(new_rocket)
-			$RocketTimer.start()
+		if PlayerStats.cooldown == false: 
+			if PlayerStats.has_rocket > 0:
+				can_fire = false
+				print(can_fire)
+				PlayerStats.set_rocket(0)
+				var new_rocket = rocket.instance()
+				new_rocket.global_transform = $Position2D.global_transform
+				get_parent().add_child(new_rocket)
+				$RocketTimer.start()
 			
-		else:
-			can_fire = false
-			var new_bullet = bullet.instance()
-			SoundPlayer.play(SoundPlayer.shoot1)
-			new_bullet.global_transform = $Position2D.global_transform
-			get_parent().add_child(new_bullet)
-			$Gun_Timer.start()
+			else:
+				can_fire = false
+				var new_bullet = bullet.instance()
+				SoundPlayer.play(SoundPlayer.shoot1)
+				new_bullet.global_transform = $Position2D.global_transform
+				get_parent().add_child(new_bullet)
+				$Gun_Timer.start()
+				PlayerStats.fire_heat += 0.2
 		#if no_fuel == false:
 			#velo = Vector2(speed_limit, 0).rotated(rotation)
 #		move_vec = move_vec.normalize()
@@ -250,3 +265,7 @@ func _on_RocketTimer_timeout():
 	can_fire = true
 	print("timerend")
 
+
+
+func _on_Cooldown_timer_timeout():
+	can_cooldown = true

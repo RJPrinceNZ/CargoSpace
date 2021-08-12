@@ -10,14 +10,10 @@
 [ext_resource path="res://Other/Finish_Point.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Other/Rocket_Powerup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Other/Health_Powerup.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Sprites/background_03_parallax_01.png" type="Texture" id=11]
+[ext_resource path="res://Backgrounds/Background2.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Other/Fuel_Powerup.tscn" type="PackedScene" id=12]
 
 [node name="Node" type="Node"]
-
-[node name="background_03_parallax_01" type="Sprite" parent="."]
-position = Vector2( 326.383, -46.334 )
-texture = ExtResource( 11 )
 
 [node name="Wall_Asteroid" parent="." instance=ExtResource( 1 )]
 position = Vector2( -10.3181, -2.3811 )
@@ -2015,3 +2011,5 @@ position = Vector2( 947.666, -80.9364 )
 
 [node name="Fuel_Powerup8" parent="." instance=ExtResource( 12 )]
 position = Vector2( 997.661, -374.504 )
+
+[node name="Background2" parent="." instance=ExtResource( 11 )]

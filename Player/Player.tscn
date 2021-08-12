@@ -214,8 +214,12 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="Cooldown_timer" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="timeout" from="Fuel_Timer" to="." method="_on_Fuel_Timer_timeout"]
 [connection signal="timeout" from="Gun_Timer" to="." method="_on_Gun_Timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="ExtraTimeTimer" to="." method="_on_ExtraTimeTimer_timeout"]
 [connection signal="timeout" from="RocketTimer" to="." method="_on_RocketTimer_timeout"]
+[connection signal="timeout" from="Cooldown_timer" to="." method="_on_Cooldown_timer_timeout"]

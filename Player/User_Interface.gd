@@ -7,7 +7,6 @@ var can_quit = true
 # var a = 2
 # var b = "text"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Health_Bar.max_value = PlayerStats.health_max
@@ -15,6 +14,7 @@ func _ready():
 func _process(delta):
 	$Health_Bar.value = PlayerStats.get_health()
 	$Fuel_Bar.value = PlayerStats.get_fuel()
+	$Cooldown_Bar.value = PlayerStats.fire_heat
 	if PlayerStats.has_rocket == 1:
 		$AnimationPlayer.play("Yes_Rocket")
 	else:

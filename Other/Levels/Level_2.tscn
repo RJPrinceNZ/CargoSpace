@@ -5,14 +5,10 @@
 [ext_resource path="res://Enemies/Rammer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Asteroid.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Other/Finish_Point.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sprites/background_01_parallax_01.png" type="Texture" id=6]
+[ext_resource path="res://Backgrounds/Background1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player/User Interface.tscn" type="PackedScene" id=7]
 
 [node name="Level_2" type="Node"]
-
-[node name="background_01_parallax_01" type="Sprite" parent="."]
-position = Vector2( -0.882044, -109.865 )
-texture = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 16.7342, 466.404 )
@@ -485,3 +481,5 @@ position = Vector2( 87.2643, -658.21 )
 position = Vector2( -31.5405, -676.69 )
 
 [node name="User Interface" parent="." instance=ExtResource( 7 )]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 6 )]

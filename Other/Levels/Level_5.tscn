@@ -5,7 +5,7 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Rammer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Wall_Asteroid.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sprites/background_03_parallax_01.png" type="Texture" id=6]
+[ext_resource path="res://Backgrounds/Background2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Shooter.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/Asteroid.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Other/Health_Powerup.tscn" type="PackedScene" id=10]
@@ -14,11 +14,6 @@
 [ext_resource path="res://Sprites/button_arrow_left.png" type="Texture" id=13]
 
 [node name="Level_5" type="Node"]
-
-[node name="background_03_parallax_01" type="Sprite" parent="."]
-position = Vector2( 264.327, 75.7074 )
-scale = Vector2( 1.37347, 1.37347 )
-texture = ExtResource( 6 )
 
 [node name="Wall_Asteroid" parent="." instance=ExtResource( 5 )]
 position = Vector2( -7.74487, 5.063 )
@@ -3500,3 +3495,5 @@ position = Vector2( -293.915, 112.795 )
 rotation = -2.68683
 scale = Vector2( 0.917791, 0.468613 )
 texture = ExtResource( 13 )
+
+[node name="Background2" parent="." instance=ExtResource( 6 )]

@@ -7,12 +7,16 @@ var fuel_max
 var current_level = 1
 var level_count = 6
 var has_rocket = 0
+var fire_heat = 0
+var cooldown = false
 
 func _ready():
+	fire_heat = 0
 	health = 100
 	health_max = 100
 	fuel = 100
 	fuel_max = 100
+	cooldown = false
 
 
 func change_health(amount):
