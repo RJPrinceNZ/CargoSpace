@@ -9,7 +9,13 @@ var level_count = 6
 var has_rocket = 0
 var fire_heat = 0
 var cooldown = false
-
+var nohit_level_1 = false
+var nohit_level_2 = false
+var nohit_level_3 = false
+var nohit_level_4 = false
+var nohit_level_5 = false
+var nohit_level_6 = false
+var nohit = true
 func _ready():
 	fire_heat = 0
 	health = 100
@@ -18,7 +24,21 @@ func _ready():
 	fuel_max = 100
 	cooldown = false
 
-
+func nohit_completed():
+	if current_level == 1:
+		nohit_level_1 = true
+	if current_level == 2:
+		nohit_level_2 = true
+	if current_level == 3:
+		nohit_level_3 = true
+	if current_level == 4:
+		nohit_level_4 = true
+	if current_level == 5:
+		nohit_level_5 = true
+	if current_level == 6:
+		nohit_level_6 = true
+	if nohit_level_1 == true and nohit_level_2 == true and nohit_level_3 == true and nohit_level_4 == true and nohit_level_5 == true and nohit_level_6 == true:
+		pass
 func change_health(amount):
 	health += amount
 	health = clamp(health,0,health_max)

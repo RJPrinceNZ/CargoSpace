@@ -2,6 +2,19 @@ extends Node
 
 func _ready():
 	MusicPlayer.change_music(MusicPlayer.song2)
+	print(PlayerStats.nohit_level_1)
+	if PlayerStats.nohit_level_1 == true:
+		$QuestionMarkIcon1/AnimationPlayer.play("Unlocked")
+	if PlayerStats.nohit_level_2 == true:
+		$QuestionMarkIcon2/AnimationPlayer.play("Unlocked")
+	if PlayerStats.nohit_level_3 == true:
+		$QuestionMarkIcon3/AnimationPlayer.play("Unlocked")
+	if PlayerStats.nohit_level_4 == true:
+		$QuestionMarkIcon4/AnimationPlayer.play("Unlocked")
+	if PlayerStats.nohit_level_5 == true:
+		$QuestionMarkIcon5/AnimationPlayer.play("Unlocked")
+	if PlayerStats.nohit_level_6 == true:
+		$QuestionMarkIcon6/AnimationPlayer.play("Unlocked")
 
 func _on_Button_pressed():
 	PlayerStats.set_level(1)

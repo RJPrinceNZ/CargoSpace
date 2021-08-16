@@ -70,12 +70,11 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0.976471, 1, 1 )
 border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 corner_detail = 10
-anti_aliasing_size = 3
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.203922, 0.203922, 0.203922, 1 )
@@ -85,10 +84,10 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0.952941, 1, 1 )
 border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 corner_detail = 10
 
 [sub_resource type="Animation" id=7]
@@ -152,10 +151,10 @@ __meta__ = {
 }
 
 [node name="Cooldown_Bar" type="ProgressBar" parent="."]
-margin_left = 15.1657
-margin_top = 125.168
-margin_right = 64.1657
-margin_bottom = 135.168
+margin_left = 15.087
+margin_top = 125.089
+margin_right = 64.087
+margin_bottom = 135.089
 rect_rotation = -89.9999
 custom_styles/fg = SubResource( 5 )
 custom_styles/bg = SubResource( 6 )
@@ -168,12 +167,26 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 14.2757
-margin_top = 29.52
-margin_right = 76.2757
-margin_bottom = 38.52
+margin_left = 15.5356
+margin_top = 26.6852
+margin_right = 77.5356
+margin_bottom = 35.6852
+rect_pivot_offset = Vector2( 42.8536, 6.32929 )
 custom_fonts/font = ExtResource( 3 )
 text = "Health"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 27.0
+margin_top = 73.0
+margin_right = 69.0
+margin_bottom = 94.0
+rect_pivot_offset = Vector2( 42.8536, 6.32929 )
+custom_fonts/font = ExtResource( 3 )
+text = "Gun 
+Heat"
 __meta__ = {
 "_edit_use_anchors_": false
 }

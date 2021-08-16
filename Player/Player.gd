@@ -19,6 +19,7 @@ var can_fire = true
 var can_cooldown = true
 
 func _ready():
+	PlayerStats.nohit = true
 	MusicPlayer.change_music(MusicPlayer.song1)
 	PlayerStats.has_rocket = 0
 	no_fuel = false
@@ -247,11 +248,15 @@ func _on_Gun_Timer_timeout():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Asteroid"):
 		PlayerStats.change_health(-15)
+		PlayerStats.nohit = false
 	if body.is_in_group("Rammer"):
+		PlayerStats.nohit = false
 		PlayerStats.change_health(-50)
 	if body.is_in_group("Enemy_Bullet"):
+		PlayerStats.nohit = false
 		PlayerStats.change_health(-10)
 	if body.is_in_group("Shooter"):
+		PlayerStats.nohit = false
 		PlayerStats.change_health(-35)
 
 

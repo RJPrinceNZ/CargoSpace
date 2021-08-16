@@ -1,6 +1,7 @@
 extends CanvasLayer
 onready var quit = preload("res://Other/quit_option.tscn")
 onready var reset = preload("res://Other/reset_option.tscn")
+onready var nope = preload("res://Other/Nope.tscn")
 
 var can_quit = true
 # Declare member variables here. Examples:
@@ -23,6 +24,10 @@ func _process(delta):
 
 func _on_TextureButton_pressed():
 	var new_menu_reset = reset.instance()
+	#if not "res://Other/Levels/Level_Bonus.tscn":
+		#get_parent().add_child(new_menu_reset)
+	#else:
+	new_menu_reset = nope.instance()
 	get_parent().add_child(new_menu_reset)
 
 
