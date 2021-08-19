@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Wall_Asteroid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/User Interface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Other/Levels/Level_Bonus.gd" type="Script" id=4]
+[ext_resource path="res://Enemies/Boss.tscn" type="PackedScene" id=5]
 
 [node name="Level_Bonus" type="Node"]
+script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -3652.84
@@ -145,3 +148,5 @@ position = Vector2( -101.311, -204.802 )
 position = Vector2( -101.938, 165.178 )
 
 [node name="User Interface" parent="." instance=ExtResource( 3 )]
+
+[node name="Boss" parent="." instance=ExtResource( 5 )]

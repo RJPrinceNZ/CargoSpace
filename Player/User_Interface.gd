@@ -7,7 +7,6 @@ var can_quit = true
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Health_Bar.max_value = PlayerStats.health_max
@@ -24,13 +23,18 @@ func _process(delta):
 
 func _on_TextureButton_pressed():
 	var new_menu_reset = reset.instance()
-	#if not "res://Other/Levels/Level_Bonus.tscn":
-		#get_parent().add_child(new_menu_reset)
-	#else:
-	new_menu_reset = nope.instance()
-	get_parent().add_child(new_menu_reset)
+	if PlayerStats.in_bonus_level == false:
+		get_parent().add_child(new_menu_reset)
+	else:
+		new_menu_reset = nope.instance()
+		get_parent().add_child(new_menu_reset)
 
 
 func _on_TextureButton2_pressed():
 	var new_menu_quit = quit.instance()
-	get_parent().add_child(new_menu_quit)
+	if PlayerStats.in_bonus_level == false:
+		get_parent().add_child(new_menu_quit)
+	else:
+		new_menu_quit = nope.instance()
+		print("hello")
+		get_parent().add_child(new_menu_quit)

@@ -1,19 +1,20 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Other/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Other/Font_small.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Other/Nope.gd" type="Script" id=2]
 
-[node name="Node" type="Node"]
+[node name="Nope" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = -29.0
-margin_top = -13.0
-margin_right = 32.0
-margin_bottom = 16.0
+margin_left = 266.43
+margin_top = 1.88819
+margin_right = 339.43
+margin_bottom = 19.8882
+rect_rotation = 42.3534
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "NO"
+text = "NOPE"
 __meta__ = {
 "_edit_use_anchors_": false
 }

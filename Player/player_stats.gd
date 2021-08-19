@@ -16,6 +16,7 @@ var nohit_level_4 = false
 var nohit_level_5 = false
 var nohit_level_6 = false
 var nohit = true
+var in_bonus_level = false
 func _ready():
 	fire_heat = 0
 	health = 100
@@ -38,7 +39,7 @@ func nohit_completed():
 	if current_level == 6:
 		nohit_level_6 = true
 	if nohit_level_1 == true and nohit_level_2 == true and nohit_level_3 == true and nohit_level_4 == true and nohit_level_5 == true and nohit_level_6 == true:
-		pass
+		get_tree().change_scene("res://Other/Cutscene.tscn")
 func change_health(amount):
 	health += amount
 	health = clamp(health,0,health_max)

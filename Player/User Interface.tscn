@@ -137,10 +137,10 @@ __meta__ = {
 }
 
 [node name="Health_Bar" type="ProgressBar" parent="."]
-margin_left = -0.111362
-margin_top = 180.0
-margin_right = 152.889
-margin_bottom = 194.0
+margin_left = 0.450505
+margin_top = 179.813
+margin_right = 153.451
+margin_bottom = 193.813
 rect_rotation = -89.9999
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
@@ -173,6 +173,7 @@ margin_right = 77.5356
 margin_bottom = 35.6852
 rect_pivot_offset = Vector2( 42.8536, 6.32929 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 1, 0.94902, 1 )
 text = "Health"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -185,6 +186,7 @@ margin_right = 69.0
 margin_bottom = 94.0
 rect_pivot_offset = Vector2( 42.8536, 6.32929 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 1, 0.94902, 1 )
 text = "Gun 
 Heat"
 __meta__ = {
@@ -197,6 +199,7 @@ margin_top = 129.0
 margin_right = 84.2063
 margin_bottom = 138.0
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 1, 0.94902, 1 )
 text = "Fuel"
 __meta__ = {
 "_edit_use_anchors_": false
