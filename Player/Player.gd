@@ -42,10 +42,14 @@ func _process(delta):
 		PlayerStats.cooldown = false
 		$Cooldown_timer.start()
 	if PlayerStats.get_health() <= 0:
-		var new_explosion = explosion.instance()
-		get_parent().add_child(new_explosion)
-		new_explosion.global_position = global_position
-		get_tree().change_scene("res://Other/Game_Over.tscn")
+		if PlayerStats.in_bonus_level == true:
+			PlayerStats.died = true
+			get_tree().change_scene("res://Other/Cutsence2.tscn")
+		else:
+			var new_explosion = explosion.instance()
+			get_parent().add_child(new_explosion)
+			new_explosion.global_position = global_position
+			get_tree().change_scene("res://Other/Game_Over.tscn")
 	motion = move_and_slide(motion)
 	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		if no_fuel == false:

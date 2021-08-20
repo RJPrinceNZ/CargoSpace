@@ -5,7 +5,7 @@
 [ext_resource path="res://Other/Font_Extra_small.tres" type="DynamicFont" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 19.5064
+radius = 22.0419
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 23.121
@@ -96,4 +96,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 23.5, 0 )
+
+[node name="Position2D2" type="Position2D" parent="."]
+position = Vector2( 0, 23.5 )
+rotation = 1.5708
+
+[node name="Position2D3" type="Position2D" parent="."]
+position = Vector2( -23.5, 0 )
+rotation = 3.14159
+
+[node name="Position2D4" type="Position2D" parent="."]
+position = Vector2( 0, -23.5 )
+rotation = 4.71239
+
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

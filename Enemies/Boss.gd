@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var hp = 15000
 onready var explosion = preload("res://Enemies/Explosion_big.tscn")
+var found_player = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -16,6 +17,8 @@ func _ready():
 
 func _process(delta):
 	print(hp)
+	if found_player == true:
+		pass
 	$CanvasLayer/Boss_Hp_Bar.set_text(str(hp))
 	$CanvasLayer/ProgressBar.set_value(hp)
 	if hp <= 0:
@@ -29,3 +32,8 @@ func _process(delta):
 func _on_HitBox_body_entered(body):
 	if body.is_in_group("Bullet"):
 		hp += -20
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":
+		found_player = true
