@@ -2301,7 +2301,7 @@ position = Vector2( -852.011, 320.984 )
 rotation = 0.377492
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -749.082, -859.491 )
+position = Vector2( -785.79, -854.996 )
 
 [node name="Wall_Asteroid671" parent="." instance=ExtResource( 5 )]
 position = Vector2( -652.639, 168.829 )

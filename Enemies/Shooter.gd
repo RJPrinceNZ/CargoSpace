@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var explosion = preload("res://Enemies/Explosion.tscn")
-onready var bullet = preload("res://Enemies/Enemy_Bullet.tscn")
+onready var bullet = preload("res://Enemies/Boss_Bullet.tscn")
 var player
 var follow_player = false
 var movespeed = 50

@@ -43,7 +43,18 @@ func _process(delta):
 			$Label.set_text(text27)
 		if current_text >= 8:
 			get_tree().quit()
-	elif not PlayerStats.died == false:
+	elif PlayerStats.died:
+		if current_text == 1:
+			$Label.set_text(text01)
+		if current_text == 2:
+			$Label.set_text(text02)
+		if current_text == 3:
+			$Label.set_text(text03)
+		if current_text == 4:
+			$Label.set_text(text04)
+		if current_text >= 5:
+			get_tree().quit()
+	else:
 		if current_text == 1:
 			$Label.set_text(text11)
 		if current_text == 2:
@@ -56,17 +67,7 @@ func _process(delta):
 			$Label.set_text(text15)
 		if current_text >= 6:
 			get_tree().quit()
-	else:
-		if current_text == 1:
-			$Label.set_text(text01)
-		if current_text == 2:
-			$Label.set_text(text02)
-		if current_text == 3:
-			$Label.set_text(text03)
-		if current_text == 4:
-			$Label.set_text(text04)
-		if current_text >= 5:
-			get_tree().quit()
+	
 
 
 

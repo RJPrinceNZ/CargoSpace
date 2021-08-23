@@ -41,7 +41,9 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 10
 
-[node name="Boss" type="KinematicBody2D"]
+[node name="Boss" type="KinematicBody2D" groups=[
+"Boss",
+]]
 script = ExtResource( 2 )
 
 [node name="enemy_mothership" type="Sprite" parent="."]
@@ -96,20 +98,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Position2D" type="Position2D" parent="."]
+[node name="Fire_point1" type="Position2D" parent="."]
 position = Vector2( 23.5, 0 )
 
-[node name="Position2D2" type="Position2D" parent="."]
+[node name="Fire_point2" type="Position2D" parent="."]
 position = Vector2( 0, 23.5 )
 rotation = 1.5708
 
-[node name="Position2D3" type="Position2D" parent="."]
+[node name="Fire_point3" type="Position2D" parent="."]
 position = Vector2( -23.5, 0 )
 rotation = 3.14159
 
-[node name="Position2D4" type="Position2D" parent="."]
+[node name="Fire_point4" type="Position2D" parent="."]
 position = Vector2( 0, -23.5 )
 rotation = 4.71239
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="Attack_end_timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Attack_end_timer" to="." method="_on_Attack_end_timer_timeout"]
