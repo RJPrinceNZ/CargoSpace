@@ -262,7 +262,9 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("Shooter"):
 		PlayerStats.nohit = false
 		PlayerStats.change_health(-35)
-
+	if body.is_in_group("Boss_bullet"):
+		PlayerStats.nohit = false
+		PlayerStats.change_health(-5)
 
 func _on_ExtraTimeTimer_timeout():
 	print("end game")

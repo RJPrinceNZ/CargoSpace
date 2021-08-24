@@ -3,11 +3,13 @@ extends KinematicBody2D
 var hp = 15000
 var player
 onready var explosion = preload("res://Enemies/Explosion_big.tscn")
-onready var bullet = preload("res://Enemies/Enemy_Bullet.tscn")
+onready var bullet = preload("res://Enemies/Boss_Bullet.tscn")
+onready var minion = preload("res://Enemies/Boss_mini.tscn")
 var found_player = false
 var can_fire = true
 var current_attack = 0
 var rotation_amount = 1
+var doing_attack = false
 # var a = 2
 # var b = "text"
 
@@ -41,7 +43,10 @@ func _process(delta):
 		new_bullet4.global_transform = $Fire_point4.global_transform
 		get_parent().add_child(new_bullet4)
 	if current_attack == 2:
-		pass
+		print("attack_2")
+		if doing_attack == false:
+			doing_attack = true
+			attack_2()
 	if current_attack == 3:
 		pass
 	$CanvasLayer/Boss_Hp_Bar.set_text(str(hp))
@@ -53,6 +58,19 @@ func _process(delta):
 		new_explosion.global_position = global_position
 		queue_free()
 
+func attack_2():
+	var new_minion1 = minion.instance()
+	new_minion1.global_transform = $Summon_point1.global_transform
+	get_parent().add_child(new_minion1)
+	var new_minion2 = minion.instance()
+	new_minion2.global_transform = $Summon_point2.global_transform
+	get_parent().add_child(new_minion2)
+	var new_minion3 = minion.instance()
+	new_minion3.global_transform = $Summon_point3.global_transform
+	get_parent().add_child(new_minion3)
+	var new_minion4 = minion.instance()
+	new_minion4.global_transform = $Summon_point4.global_transform
+	get_parent().add_child(new_minion4)
 
 func _on_HitBox_body_entered(body):
 	if body.is_in_group("Bullet"):
@@ -67,6 +85,7 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_Attack_end_timer_timeout():
+	doing_attack = false
 	current_attack = 0
 
 

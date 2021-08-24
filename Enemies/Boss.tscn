@@ -99,18 +99,18 @@ __meta__ = {
 }
 
 [node name="Fire_point1" type="Position2D" parent="."]
-position = Vector2( 23.5, 0 )
+position = Vector2( 25, 0 )
 
 [node name="Fire_point2" type="Position2D" parent="."]
-position = Vector2( 0, 23.5 )
+position = Vector2( 0, 25 )
 rotation = 1.5708
 
 [node name="Fire_point3" type="Position2D" parent="."]
-position = Vector2( -23.5, 0 )
+position = Vector2( -25, 0 )
 rotation = 3.14159
 
 [node name="Fire_point4" type="Position2D" parent="."]
-position = Vector2( 0, -23.5 )
+position = Vector2( 0, -25 )
 rotation = 4.71239
 
 [node name="Timer" type="Timer" parent="."]
@@ -118,7 +118,25 @@ wait_time = 0.05
 one_shot = true
 
 [node name="Attack_end_timer" type="Timer" parent="."]
+wait_time = 5.0
 one_shot = true
+
+[node name="Summon_Timer" type="Timer" parent="."]
+
+[node name="Summon_point1" type="Position2D" parent="."]
+position = Vector2( 40, 0 )
+
+[node name="Summon_point2" type="Position2D" parent="."]
+position = Vector2( 0, 40 )
+rotation = 1.5708
+
+[node name="Summon_point3" type="Position2D" parent="."]
+position = Vector2( -40, 0 )
+rotation = 3.14159
+
+[node name="Summon_point4" type="Position2D" parent="."]
+position = Vector2( 0, -40 )
+rotation = 4.71239
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

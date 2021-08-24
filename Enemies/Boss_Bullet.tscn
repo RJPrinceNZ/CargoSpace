@@ -10,7 +10,9 @@ radius = 0.267191
 radius = 0.945305
 height = 3.28126
 
-[node name="Boss_Bullet" type="RigidBody2D"]
+[node name="Boss_Bullet" type="RigidBody2D" groups=[
+"Boss_bullet",
+]]
 script = ExtResource( 2 )
 
 [node name="bullet_blaster_small" type="Sprite" parent="."]
