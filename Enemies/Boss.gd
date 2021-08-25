@@ -5,6 +5,7 @@ var player
 onready var explosion = preload("res://Enemies/Explosion_big.tscn")
 onready var bullet = preload("res://Enemies/Boss_Bullet.tscn")
 onready var minion = preload("res://Enemies/Boss_mini.tscn")
+onready var bomb = preload("res://Enemies/Cluster_bomb.tscn")
 var found_player = false
 var can_fire = true
 var current_attack = 0
@@ -24,7 +25,7 @@ func _ready():
 func _process(delta):
 	print(current_attack)
 	if current_attack == 0:
-		current_attack = randi() % 3 +1
+		current_attack = randi() % 4 +1
 		$Attack_end_timer.start()
 	rotation += rotation_amount*delta
 	if current_attack == 1 and can_fire == true:
@@ -48,7 +49,10 @@ func _process(delta):
 			doing_attack = true
 			attack_2()
 	if current_attack == 3:
-		pass
+		print("attack_3")
+		if doing_attack == false:
+			doing_attack = true
+			attack_3()
 	$CanvasLayer/Boss_Hp_Bar.set_text(str(hp))
 	$CanvasLayer/ProgressBar.set_value(hp)
 	if hp <= 0:
@@ -57,6 +61,20 @@ func _process(delta):
 		get_parent().add_child(new_explosion)
 		new_explosion.global_position = global_position
 		queue_free()
+
+func attack_3():
+	var new_bomb1 = bomb.instance()
+	new_bomb1.global_transform = $Fire_point1.global_transform
+	get_parent().add_child(new_bomb1)
+	var new_bomb2 = bomb.instance()
+	new_bomb2.global_transform = $Fire_point2.global_transform
+	get_parent().add_child(new_bomb2)
+	var new_bomb3 = bomb.instance()
+	new_bomb3.global_transform = $Fire_point3.global_transform
+	get_parent().add_child(new_bomb3)
+	var new_bomb4 = bomb.instance()
+	new_bomb4.global_transform = $Fire_point4.global_transform
+	get_parent().add_child(new_bomb4)
 
 func attack_2():
 	var new_minion1 = minion.instance()
