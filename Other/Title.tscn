@@ -70,6 +70,9 @@ custom_fonts/font = ExtResource( 4 )
 text = "How To
 Play"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button4" type="Button" parent="."]
 margin_left = 23.9966
