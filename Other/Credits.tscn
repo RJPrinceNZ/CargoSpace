@@ -15,10 +15,10 @@ position = Vector2( 440.904, 190.326 )
 texture = ExtResource( 5 )
 
 [node name="LinkButton" type="LinkButton" parent="."]
-margin_left = 66.7678
-margin_top = 53.2444
-margin_right = 252.768
-margin_bottom = 74.2444
+margin_left = 7.42088
+margin_top = 47.9498
+margin_right = 193.421
+margin_bottom = 68.9498
 custom_fonts/font = ExtResource( 4 )
 action_mode = 0
 text = "CraftPix.com"
@@ -38,10 +38,10 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 129.047
-margin_top = 39.2444
-margin_right = 191.047
-margin_bottom = 53.2444
+margin_left = 69.7001
+margin_top = 33.9498
+margin_right = 131.7
+margin_bottom = 47.9498
 custom_fonts/font = ExtResource( 3 )
 text = "Assets"
 __meta__ = {
@@ -49,10 +49,10 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 129.047
-margin_top = 74.2444
-margin_right = 191.047
-margin_bottom = 88.2444
+margin_left = 220.616
+margin_top = 55.8117
+margin_right = 282.616
+margin_bottom = 69.8117
 custom_fonts/font = ExtResource( 3 )
 text = "Sounds"
 __meta__ = {
@@ -60,10 +60,10 @@ __meta__ = {
 }
 
 [node name="Label4" type="Label" parent="."]
-margin_left = 139.96
-margin_top = 110.707
-margin_right = 181.96
-margin_bottom = 124.707
+margin_left = 75.1379
+margin_top = 82.6456
+margin_right = 117.138
+margin_bottom = 96.6456
 custom_fonts/font = ExtResource( 3 )
 text = "Font"
 __meta__ = {
@@ -71,10 +71,10 @@ __meta__ = {
 }
 
 [node name="LinkButton2" type="LinkButton" parent="."]
-margin_left = 98.5355
-margin_top = 88.2444
-margin_right = 222.536
-margin_bottom = 106.244
+margin_left = 190.104
+margin_top = 69.8117
+margin_right = 314.104
+margin_bottom = 87.8117
 custom_fonts/font = ExtResource( 4 )
 text = "Mixkit.co"
 __meta__ = {
@@ -82,10 +82,10 @@ __meta__ = {
 }
 
 [node name="LinkButton3" type="LinkButton" parent="."]
-margin_left = 78.4889
-margin_top = 124.707
-margin_right = 249.489
-margin_bottom = 142.707
+margin_left = 13.6667
+margin_top = 96.6456
+margin_right = 184.667
+margin_bottom = 114.646
 custom_fonts/font = ExtResource( 4 )
 text = "Dafont.com"
 __meta__ = {
