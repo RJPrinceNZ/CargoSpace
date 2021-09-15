@@ -18,7 +18,7 @@ texture = ExtResource( 2 )
 margin_left = 24.0
 margin_top = 66.0
 margin_right = 154.0
-margin_bottom = 105.0
+margin_bottom = 112.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Play"
@@ -54,13 +54,22 @@ __meta__ = {
 margin_left = 163.0
 margin_top = 66.0
 margin_right = 289.0
-margin_bottom = 105.0
+margin_bottom = 112.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "How to Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="Button3"]
+margin_left = 11.2272
+margin_top = 4.23177
+margin_right = 114.227
+margin_bottom = 43.2318
+custom_fonts/font = ExtResource( 4 )
+text = "How To
+Play"
+align = 1
 
 [node name="Button4" type="Button" parent="."]
 margin_left = 23.9966
