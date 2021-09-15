@@ -30,3 +30,7 @@ func _on_Button3_pressed():
 
 func _on_Button4_pressed():
 	get_tree().change_scene("res://Other/Settings.tscn")
+
+
+func _on_Button5_pressed():
+	get_tree().change_scene("res://Other/Credits.tscn")

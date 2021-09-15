@@ -15,10 +15,10 @@ scale = Vector2( 0.238492, 0.238492 )
 texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 98.6895
-margin_top = 62.837
-margin_right = 219.689
-margin_bottom = 97.837
+margin_left = 24.0
+margin_top = 66.0
+margin_right = 154.0
+margin_bottom = 105.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Play"
@@ -39,10 +39,10 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 123.298
-margin_top = 153.811
-margin_right = 197.298
-margin_bottom = 177.811
+margin_left = 125.895
+margin_top = 148.424
+margin_right = 199.895
+margin_bottom = 172.424
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Quit"
@@ -51,10 +51,10 @@ __meta__ = {
 }
 
 [node name="Button3" type="Button" parent="."]
-margin_left = 98.6895
-margin_top = 100.508
-margin_right = 219.689
-margin_bottom = 124.508
+margin_left = 163.0
+margin_top = 66.0
+margin_right = 289.0
+margin_bottom = 105.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "How to Play"
@@ -63,13 +63,24 @@ __meta__ = {
 }
 
 [node name="Button4" type="Button" parent="."]
-margin_left = 94.0186
-margin_top = 128.175
-margin_right = 226.019
-margin_bottom = 152.175
+margin_left = 23.9966
+margin_top = 116.0
+margin_right = 155.997
+margin_bottom = 140.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="."]
+margin_left = 163.0
+margin_top = 116.0
+margin_right = 289.0
+margin_bottom = 140.0
+custom_fonts/font = ExtResource( 4 )
+text = "Credits"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -78,3 +89,4 @@ __meta__ = {
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
