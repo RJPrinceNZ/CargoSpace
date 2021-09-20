@@ -15,3 +15,7 @@ func _on_LinkButton3_pressed():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Other/Title.tscn")
+
+
+func _on_LinkButton4_pressed():
+	OS.shell_open("https://www.youtube.com/channel/UC_c8-ABAqDEemidFQxz9K6Q")
