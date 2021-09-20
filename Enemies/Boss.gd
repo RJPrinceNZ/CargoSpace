@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var hp = 15000
+var hp = 10000
 var player
 onready var explosion = preload("res://Enemies/Explosion_big.tscn")
 onready var bullet = preload("res://Enemies/Boss_Bullet.tscn")
@@ -17,7 +17,7 @@ var doing_attack = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hp = 15000
+	hp = 10000
 	$CanvasLayer/Boss_Hp_Bar.set_text(str(hp))
 	$CanvasLayer/ProgressBar.max_value = hp
 	$CanvasLayer/ProgressBar.set_value(hp)

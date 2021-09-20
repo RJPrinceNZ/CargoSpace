@@ -44,6 +44,7 @@ corner_detail = 10
 [node name="Boss" type="KinematicBody2D" groups=[
 "Boss",
 ]]
+position = Vector2( 0.0315094, 0.0481491 )
 script = ExtResource( 2 )
 
 [node name="enemy_mothership" type="Sprite" parent="."]
@@ -70,6 +71,10 @@ shape = SubResource( 3 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchor_left = 0.00144849
+anchor_top = -0.00331082
+anchor_right = 0.00144849
+anchor_bottom = -0.00331082
 margin_left = 69.4305
 margin_top = 4.88691
 margin_right = 235.43
@@ -85,6 +90,10 @@ __meta__ = {
 }
 
 [node name="Boss_Hp_Bar" type="Label" parent="CanvasLayer"]
+anchor_left = 0.00144849
+anchor_top = -0.00331082
+anchor_right = 0.00144849
+anchor_bottom = -0.00331082
 margin_left = 72.0
 margin_top = 8.0
 margin_right = 230.0

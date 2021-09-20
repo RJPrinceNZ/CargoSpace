@@ -7,7 +7,8 @@
 radius = 3.42386
 
 [node name="Cluster_bomb" type="RigidBody2D"]
-position = Vector2( 0.00511169, 0.00328827 )
+position = Vector2( -0.0124269, -0.00998545 )
+gravity_scale = 0.0
 script = ExtResource( 2 )
 
 [node name="cluster_bomb_single" type="Sprite" parent="."]
@@ -37,7 +38,7 @@ rotation = -1.5708
 
 [node name="Cluster_point5" type="Position2D" parent="."]
 position = Vector2( 2.5, -2.5 )
-rotation = -0.785395
+rotation = -0.785398
 
 [node name="Cluster_point6" type="Position2D" parent="."]
 position = Vector2( 2.5, 2.5 )
@@ -49,6 +50,6 @@ rotation = 2.35619
 
 [node name="Cluster_point8" type="Position2D" parent="."]
 position = Vector2( -2.5, -2.5 )
-rotation = -2.3562
+rotation = -2.35619
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
