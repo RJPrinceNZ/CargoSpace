@@ -9,7 +9,9 @@
 [node name="Level_Bonus" type="Node"]
 script = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." groups=[
+"Background",
+]]
 margin_left = -3652.84
 margin_top = -2301.01
 margin_right = 3834.16

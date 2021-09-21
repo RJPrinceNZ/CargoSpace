@@ -44,6 +44,7 @@ tracks/0/keys = {
 
 [node name="Boss_mini" type="KinematicBody2D" groups=[
 "Boss",
+"Mini",
 ]]
 script = ExtResource( 2 )
 

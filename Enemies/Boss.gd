@@ -17,13 +17,13 @@ var doing_attack = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	hp = 10000
 	$CanvasLayer/Boss_Hp_Bar.set_text(str(hp))
 	$CanvasLayer/ProgressBar.max_value = hp
 	$CanvasLayer/ProgressBar.set_value(hp)
 
 func _process(delta):
-	print(current_attack)
 	if current_attack == 0:
 		current_attack = randi() % 4 +1
 		$Attack_end_timer.start()
@@ -44,12 +44,10 @@ func _process(delta):
 		new_bullet4.global_transform = $Fire_point4.global_transform
 		get_parent().add_child(new_bullet4)
 	if current_attack == 2:
-		print("attack_2")
 		if doing_attack == false:
 			doing_attack = true
 			attack_2()
 	if current_attack == 3:
-		print("attack_3")
 		if doing_attack == false:
 			doing_attack = true
 			attack_3()

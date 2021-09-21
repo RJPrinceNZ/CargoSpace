@@ -12,7 +12,7 @@ func _ready():
 
 func _physics_process(delta):
 	if is_fired == true:
-		add_central_force(get_global_transform().x * bullet_speed * delta)
+		add_central_force(get_global_transform().x * -bullet_speed * delta)
 		is_fired = false
 
 func _on_Area2D_body_entered(body):

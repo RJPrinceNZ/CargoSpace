@@ -4,12 +4,13 @@
 [ext_resource path="res://Enemies/Cluster_bullet.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 0.870044
+radius = 0.060017
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 1.20863
+radius = 1.60945
 
 [node name="Cluster_bullet" type="RigidBody2D" groups=[
+"Cluster_bullet",
 "Enemy_Bullet",
 "Ignore",
 ]]
@@ -28,7 +29,7 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 

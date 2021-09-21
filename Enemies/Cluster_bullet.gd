@@ -18,8 +18,13 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	if not body.is_in_group("Enemy_Bullet") and not body.is_in_group("ignore"):
-		queue_free()
+	print(body.name)
+	if body.is_in_group("Bomb") or body.is_in_group("Explosion") or body == self:
+		return
+#	if body.is_in_group("wall") and not self or body.is_in_group("Cluster_bullet") and not self:
+#		queue_free()
+#	if not body.is_in_group("Bomb") and not body.is_in_group("Explosion") and not self:
+	queue_free()
 	pass # Replace with function body.
 
 

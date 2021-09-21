@@ -6,7 +6,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.42386
 
-[node name="Cluster_bomb" type="RigidBody2D"]
+[node name="Cluster_bomb" type="RigidBody2D" groups=[
+"Bomb",
+]]
 position = Vector2( -0.0124269, -0.00998545 )
 gravity_scale = 0.0
 script = ExtResource( 2 )
