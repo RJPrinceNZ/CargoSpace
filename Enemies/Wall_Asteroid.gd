@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var a = rand_range(1,-1)
+var a = 1
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -10,6 +10,8 @@ func _process(delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
+	a = rand_range(1,-1)
 	rotation += 10*a
 
 

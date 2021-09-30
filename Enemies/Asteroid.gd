@@ -1,8 +1,12 @@
 extends StaticBody2D
 
 var hp = 100 #health points
-var a = rand_range(1,-1)
+var a = 1
 onready var explosion = preload("res://Enemies/Explosion.tscn")
+
+func _ready():
+	randomize()
+	a = rand_range(1,-1)
 
 func _process(delta):
 	rotation += a*delta # Rotation
