@@ -5,8 +5,9 @@ extends AudioStreamPlayer
 # var a = 2
 # var b = "text"
 
-onready var song1 = preload("res://Sound/mixkit-space-game-668.mp3")
+onready var song3 = preload("res://Sound/mixkit-space-game-668.mp3")
 onready var song2 = preload("res://Sound/mixkit-sci-fi-game-395.mp3")
+onready var song1 = preload("res://Sound/mixkit-sonnor-554.mp3")
 var current_song = song1
 var current_volume = 1
 var vol=1

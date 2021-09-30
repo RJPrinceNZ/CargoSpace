@@ -9,7 +9,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PlayerStats.in_bonus_level = true
-	MusicPlayer.change_music(MusicPlayer.song1)
+	MusicPlayer.change_music(MusicPlayer.song3)
 	MusicPlayer.un_mute()
 
 func _process(delta):
