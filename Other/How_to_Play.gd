@@ -1,19 +1,11 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+#scene that shows basic mechanics of the game
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	MusicPlayer.change_music(MusicPlayer.song2)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_Button_pressed():

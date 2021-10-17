@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+#minions summoned from boss
 onready var explosion = preload("res://Enemies/Explosion.tscn")
 onready var bullet = preload("res://Enemies/Boss_Bullet.tscn")
 var hp = 50

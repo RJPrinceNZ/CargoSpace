@@ -1,4 +1,5 @@
 extends Node
+#cutscene played after boss (spelling opps)
 
 var current_text = 1
 var text01 = "pathetic"

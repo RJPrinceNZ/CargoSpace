@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+#variables
 var hp = 10000
 var player
 onready var explosion = preload("res://Enemies/Explosion_big.tscn")
@@ -31,6 +32,7 @@ func _process(delta):
 	if current_attack == 1 and can_fire == true:
 		can_fire = false
 		$Timer.start()
+		#spin attack
 		var new_bullet1 = bullet.instance()
 		new_bullet1.global_transform = $Fire_point1.global_transform
 		get_parent().add_child(new_bullet1)
@@ -61,6 +63,7 @@ func _process(delta):
 		queue_free()
 
 func attack_3():
+	#summon bomb attack
 	var new_bomb1 = bomb.instance()
 	new_bomb1.global_transform = $Fire_point1.global_transform
 	get_parent().add_child(new_bomb1)
@@ -75,6 +78,7 @@ func attack_3():
 	get_parent().add_child(new_bomb4)
 
 func attack_2():
+	#summon minion attack
 	var new_minion1 = minion.instance()
 	new_minion1.global_transform = $Summon_point1.global_transform
 	get_parent().add_child(new_minion1)

@@ -1,9 +1,6 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+#scene shown when player loses
 
 
 # Called when the node enters the scene tree for the first time.

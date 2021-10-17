@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-
+#powerup for player that gives health
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

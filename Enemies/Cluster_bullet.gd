@@ -1,17 +1,17 @@
 extends RigidBody2D
-
+#bullet summoned from cluster bomb
 
 var is_fire = false
 
 
-# Called when the node enters the scene tree for the first time.
+
 export var bullet_speed = 200
 var is_fired = true
 
 
 func _physics_process(delta):
 	apply_central_impulse(Vector2(cos(rotation),sin(rotation))*bullet_speed*delta)
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	SoundPlayer.play(SoundPlayer.shoot1)
 	add_to_group("ignore")

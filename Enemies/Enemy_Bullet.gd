@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+#bullet fired from shooter enemy
 
 export var bullet_speed = 12000
 var is_fired = true

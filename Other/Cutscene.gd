@@ -1,4 +1,5 @@
 extends Node
+#cutscene played before fighting boss
 
 var can_press = false
 var current_text = 1

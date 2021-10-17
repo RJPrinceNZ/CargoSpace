@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+#Bullet from player
 export var bullet_speed = 120000
 var is_fired = false
 
