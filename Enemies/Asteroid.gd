@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+#basic asteroid
+#variables
 var hp = 100 #health points
 var a = 1
 onready var explosion = preload("res://Enemies/Explosion.tscn")
