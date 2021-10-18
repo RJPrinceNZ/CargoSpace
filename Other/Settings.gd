@@ -1,5 +1,7 @@
 extends Node
 
+#settings to change volume of music and sound
+
 var Music_Volume = "100%"
 var Sound_Volume = "100%"
 

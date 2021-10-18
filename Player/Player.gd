@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+#variables
 onready var explosion = preload("res://Enemies/Explosion.tscn")
 onready var bullet = preload("res://Player/Bullet.tscn")
 onready var rocket = preload("res://Player/Rocket.tscn")
@@ -18,6 +19,7 @@ var motion = Vector2.ZERO
 var can_fire = true
 var can_cooldown = true
 
+#things that change on leave start
 func _ready():
 	PlayerStats.nohit = true
 	MusicPlayer.change_music(MusicPlayer.song1)
@@ -31,7 +33,9 @@ func _ready():
 func get_vector(angle):
 	return Vector2(sin(angle), cos(angle))
 
+#what happens when in level for the player ship
 func _process(delta):
+	#gun heat tests
 	print(PlayerStats.fire_heat)
 	if PlayerStats.fire_heat >= 10:
 		can_fire = false
@@ -41,6 +45,7 @@ func _process(delta):
 		can_fire = true
 		PlayerStats.cooldown = false
 		$Cooldown_timer.start()
+	#death
 	if PlayerStats.get_health() <= 0:
 		if PlayerStats.in_bonus_level == true:
 			PlayerStats.died = true
@@ -51,10 +56,15 @@ func _process(delta):
 			new_explosion.global_position = global_position
 			get_tree().change_scene("res://Other/Game_Over.tscn")
 	motion = move_and_slide(motion)
+	#movement code
 	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 		if no_fuel == false:
 			if not Input.is_action_pressed("ui_manual_rotation"):
 				$AnimationPlayer.play("Moving")
+			else:
+				$AnimationPlayer.play("Idle")
+		else:
+			$AnimationPlayer.play("Idle")
 	else:
 		$AnimationPlayer.play("Idle")
 	if Input.is_action_pressed("ui_manual_rotation"):
@@ -81,6 +91,7 @@ func _process(delta):
 			rot_dir = 92.5
 		elif Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
 			rot_dir = 0
+	#shooting gun
 	if PlayerStats.fire_heat > 0 and can_cooldown == true and not Input.is_action_pressed("ui_player_fire"):
 		can_cooldown = false
 		$Cooldown_timer.start()
@@ -110,6 +121,8 @@ func _process(delta):
 		#change_speed()
 		#move_and_slide(move_vec * speed_limit)
 	#move_and_slide(velo)
+
+#usless function
 func change_speed():
 	if current_rotation == 0:
 		yspeed += a
@@ -222,7 +235,7 @@ func move(Xspeed, Yspeed, delta):
 	position.x += Xspeed * delta
 	position.y += -Yspeed * delta
 
-
+#timer for fuel
 func _on_Fuel_Timer_timeout():
 	PlayerStats.change_fuel(-1)
 	if not PlayerStats.has_fuel():
@@ -232,7 +245,7 @@ func _on_Fuel_Timer_timeout():
 	if no_fuel == true:
 		print("extra time")
 		$ExtraTimeTimer.start()
-
+#more movement stuff
 func apply_movement(acceleration):
 	motion += acceleration
 	motion = motion.clamped(speed_limit)
@@ -243,12 +256,12 @@ func get_input_axis():
 	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	return axis.normalized()
 
-
+#timer for gun
 func _on_Gun_Timer_timeout():
 	can_fire = true
 
 
-
+#when player is hit by something
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Asteroid"):
 		PlayerStats.change_health(-15)
@@ -266,6 +279,7 @@ func _on_Area2D_body_entered(body):
 		PlayerStats.nohit = false
 		PlayerStats.change_health(-5)
 
+#other timers
 func _on_ExtraTimeTimer_timeout():
 	print("end game")
 	get_tree().change_scene("res://Other/Game_Over.tscn")

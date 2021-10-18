@@ -1,12 +1,13 @@
 extends RigidBody2D
 
+#code for the rocket from the rocket powerup
+
+
 onready var explosion = preload("res://Player/Explosion.tscn")
 export var bullet_speed = 25000
 var is_fired = false
 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	SoundPlayer.play(SoundPlayer.launch1)
 	add_to_group("ignore")
@@ -27,4 +28,4 @@ func _on_Hit_Box_body_entered(body):
 		new_explosion.global_transform = $Position2D.global_transform
 		get_parent().add_child(new_explosion)
 		queue_free()
-	pass # Replace with function body.pass # Replace with function body.
+	pass 

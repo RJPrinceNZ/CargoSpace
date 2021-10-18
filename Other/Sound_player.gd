@@ -1,4 +1,5 @@
 extends Node
+#thing that plays sound effects
 
 onready var shoot1 = preload("res://Sound/mixkit-short-laser-gun-shot-1670.wav")
 onready var explosion1 = preload("res://Sound/mixkit-fast-game-explosion-1688.wav")

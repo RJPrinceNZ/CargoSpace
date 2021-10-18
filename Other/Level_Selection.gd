@@ -1,5 +1,6 @@
 extends Node
 
+#shows if player has completed levels without taking damage
 func _ready():
 	MusicPlayer.change_music(MusicPlayer.song2)
 	print(PlayerStats.nohit_level_1)
@@ -15,6 +16,8 @@ func _ready():
 		$QuestionMarkIcon5/AnimationPlayer.play("Unlocked")
 	if PlayerStats.nohit_level_6 == true:
 		$QuestionMarkIcon6/AnimationPlayer.play("Unlocked")
+
+#all buttons, to either go back to title, or choose a level
 
 func _on_Button_pressed():
 	PlayerStats.set_level(1)

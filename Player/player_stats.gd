@@ -1,5 +1,8 @@
 extends Node
 
+#code that controls stats for the player
+
+#all of the many variables
 var health
 var health_max
 var fuel
@@ -26,6 +29,7 @@ func _ready():
 	fuel_max = 100
 	cooldown = false
 
+#tests if the player has completed every level without taking a hit
 func nohit_completed():
 	if current_level == 1:
 		nohit_level_1 = true
@@ -41,6 +45,8 @@ func nohit_completed():
 		nohit_level_6 = true
 	if nohit_level_1 == true and nohit_level_2 == true and nohit_level_3 == true and nohit_level_4 == true and nohit_level_5 == true and nohit_level_6 == true:
 		get_tree().change_scene("res://Other/Cutscene.tscn")
+
+#variable functions
 func change_health(amount):
 	health += amount
 	health = clamp(health,0,health_max)

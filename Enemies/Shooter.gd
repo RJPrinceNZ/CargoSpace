@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+#enemy that shoots bullets and runs away to avoid getting hit
+
 onready var explosion = preload("res://Enemies/Explosion.tscn")
 onready var bullet = preload("res://Enemies/Enemy_Bullet.tscn")
 var player
