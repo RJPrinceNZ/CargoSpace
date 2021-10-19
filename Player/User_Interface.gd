@@ -1,13 +1,13 @@
 extends CanvasLayer
+
+#the UI oshown when playing the game.
+
 onready var quit = preload("res://Other/quit_option.tscn")
 onready var reset = preload("res://Other/reset_option.tscn")
 onready var nope = preload("res://Other/Nope.tscn")
 
 var can_quit = true
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	$Health_Bar.max_value = PlayerStats.health_max
 	$Fuel_Bar.max_value = PlayerStats.fuel_max

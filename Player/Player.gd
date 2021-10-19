@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+#the code for the player ship
+
 #variables
 onready var explosion = preload("res://Enemies/Explosion.tscn")
 onready var bullet = preload("res://Player/Bullet.tscn")
