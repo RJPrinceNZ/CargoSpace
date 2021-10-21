@@ -6,7 +6,7 @@ onready var explosion = preload("res://Enemies/Explosion.tscn")
 var player
 var follow_player = false
 var movespeed = 50
-var hp = 25
+var hp = 400
 var movement = Vector2.ZERO
 
 #what happens when rammer is in game.

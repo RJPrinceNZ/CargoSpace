@@ -7,7 +7,7 @@ onready var bullet = preload("res://Enemies/Enemy_Bullet.tscn")
 var player
 var follow_player = false
 var movespeed = 50
-var hp = 150
+var hp = 250
 var movement = Vector2.ZERO
 var can_fire = true
 

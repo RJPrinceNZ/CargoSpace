@@ -379,6 +379,27 @@ position = Vector2( 681.425, 217.47 )
 [node name="Asteroid2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 355.953, 148.686 )
 
+[node name="Asteroid13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1071.29, 80.2489 )
+
+[node name="Asteroid14" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1064.94, 58.0002 )
+
+[node name="Asteroid15" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1061.76, 125.276 )
+
+[node name="Asteroid16" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1071.82, 104.087 )
+
+[node name="Asteroid17" parent="." instance=ExtResource( 7 )]
+position = Vector2( 930.386, 43.1678 )
+
+[node name="Asteroid18" parent="." instance=ExtResource( 7 )]
+position = Vector2( 916.083, 184.606 )
+
+[node name="Asteroid19" parent="." instance=ExtResource( 7 )]
+position = Vector2( 933.939, 158.03 )
+
 [node name="User Interface" parent="." instance=ExtResource( 8 )]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
