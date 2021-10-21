@@ -23,6 +23,7 @@ var can_cooldown = true
 
 #things that change on leave start
 func _ready():
+	PlayerStats.fire_heat = 0
 	PlayerStats.nohit = true
 	MusicPlayer.change_music(MusicPlayer.song1)
 	PlayerStats.has_rocket = 0

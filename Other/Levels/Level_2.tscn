@@ -116,7 +116,7 @@ position = Vector2( 310.001, -84.6254 )
 position = Vector2( 186.378, 512.011 )
 
 [node name="Wall_Asteroid32" parent="." instance=ExtResource( 1 )]
-position = Vector2( 190.72, 473.505 )
+position = Vector2( 190.72, 473.108 )
 
 [node name="Wall_Asteroid33" parent="." instance=ExtResource( 1 )]
 position = Vector2( 191.305, 432.626 )
