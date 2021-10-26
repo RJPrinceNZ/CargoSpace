@@ -94,7 +94,8 @@ func attack_2():
 
 func _on_HitBox_body_entered(body):
 	if body.is_in_group("Bullet"):
-		hp += -20
+		hp += -120
+		SoundPlayer.play(SoundPlayer.hit1)
 
 
 func _on_Area2D_body_entered(body):

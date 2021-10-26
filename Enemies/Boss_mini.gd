@@ -42,11 +42,10 @@ func _on_Area2D_body_entered(body):
 		found_player = true
 		player = body
 
-
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("Bullet"):
-		hp += -20
-
+		hp += -120
+		SoundPlayer.play(SoundPlayer.hit1)
 
 func _on_Timer_timeout():
 	can_fire = true

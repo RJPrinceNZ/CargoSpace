@@ -43,7 +43,8 @@ func _on_Area2D_body_entered(body):
 func _on_DamageBox_body_entered(body):
 	print(hp)
 	if body.is_in_group("Bullet"):
-		hp += -20
+		hp += -120
+		SoundPlayer.play(SoundPlayer.hit1)
 	if body.name == "Player":
 		hp = 0
 	if body.is_in_group("Rocket"):

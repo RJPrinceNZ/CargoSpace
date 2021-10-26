@@ -13,4 +13,5 @@ func _on_Area2D_body_entered(body):
 		if PlayerStats.has_rocket == 0:
 			print("hello")
 			PlayerStats.change_rocket(-1)
+			SoundPlayer.play(SoundPlayer.powerup2)
 			queue_free()

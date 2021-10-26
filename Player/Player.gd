@@ -20,7 +20,6 @@ var no_fuel = false
 var motion = Vector2.ZERO
 var can_fire = true
 var can_cooldown = true
-
 #things that change on leave start
 func _ready():
 	PlayerStats.fire_heat = 0
@@ -98,10 +97,12 @@ func _process(delta):
 	if PlayerStats.fire_heat > 0 and can_cooldown == true and not Input.is_action_pressed("ui_player_fire"):
 		can_cooldown = false
 		$Cooldown_timer.start()
-		PlayerStats.fire_heat += -0.2
+		if can_fire == true:
+			PlayerStats.fire_heat += -0.2
 	if Input.is_action_pressed("ui_player_fire") and can_fire == true:
 		if PlayerStats.cooldown == false: 
 			if PlayerStats.has_rocket > 0:
+				#what happens if player has rocket.
 				can_fire = false
 				print(can_fire)
 				PlayerStats.set_rocket(0)
@@ -111,13 +112,14 @@ func _process(delta):
 				$RocketTimer.start()
 			
 			else:
+				#what happens if player does not have rocket.
 				can_fire = false
 				var new_bullet = bullet.instance()
 				SoundPlayer.play(SoundPlayer.shoot1)
 				new_bullet.global_transform = $Position2D.global_transform
 				get_parent().add_child(new_bullet)
 				$Gun_Timer.start()
-				PlayerStats.fire_heat += 0.2
+				PlayerStats.fire_heat += 0.5
 		#if no_fuel == false:
 			#velo = Vector2(speed_limit, 0).rotated(rotation)
 #		move_vec = move_vec.normalize()
@@ -125,7 +127,7 @@ func _process(delta):
 		#move_and_slide(move_vec * speed_limit)
 	#move_and_slide(velo)
 
-#usless function
+#useless function, is old code not in use.
 func change_speed():
 	if current_rotation == 0:
 		yspeed += a

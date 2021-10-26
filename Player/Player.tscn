@@ -187,7 +187,7 @@ anims/Moving = SubResource( 5 )
 position = Vector2( 0, -15.497 )
 
 [node name="Gun_Timer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.3
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
