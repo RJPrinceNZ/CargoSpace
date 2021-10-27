@@ -3,8 +3,6 @@ extends RigidBody2D
 
 var is_fire = false
 
-
-
 export var bullet_speed = 200
 var is_fired = true
 
@@ -30,3 +28,6 @@ func _on_Area2D_body_entered(body):
 
 func _on_Timer_timeout():
 	queue_free()
+
+
+

@@ -20,6 +20,7 @@ var no_fuel = false
 var motion = Vector2.ZERO
 var can_fire = true
 var can_cooldown = true
+var on_cooldown = false
 #things that change on leave start
 func _ready():
 	PlayerStats.fire_heat = 0
@@ -41,9 +42,11 @@ func _process(delta):
 	print(PlayerStats.fire_heat)
 	if PlayerStats.fire_heat >= 10:
 		can_fire = false
+		on_cooldown = true
 		PlayerStats.cooldown = true
 	if PlayerStats.fire_heat <= 0:
 		PlayerStats.fire_heat = 0
+		on_cooldown = false
 		can_fire = true
 		PlayerStats.cooldown = false
 		$Cooldown_timer.start()
@@ -97,7 +100,7 @@ func _process(delta):
 	if PlayerStats.fire_heat > 0 and can_cooldown == true and not Input.is_action_pressed("ui_player_fire"):
 		can_cooldown = false
 		$Cooldown_timer.start()
-		if can_fire == true:
+		if can_fire == true or on_cooldown == true:
 			PlayerStats.fire_heat += -0.2
 	if Input.is_action_pressed("ui_player_fire") and can_fire == true:
 		if PlayerStats.cooldown == false: 
