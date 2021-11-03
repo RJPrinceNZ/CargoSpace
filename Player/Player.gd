@@ -272,19 +272,24 @@ func _on_Gun_Timer_timeout():
 #when player is hit by something
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Asteroid"):
+		SoundPlayer.play(SoundPlayer.playerhit1)
 		PlayerStats.change_health(-15)
 		PlayerStats.nohit = false
 	if body.is_in_group("Rammer"):
 		PlayerStats.nohit = false
+		SoundPlayer.play(SoundPlayer.playerhit1)
 		PlayerStats.change_health(-50)
 	if body.is_in_group("Enemy_Bullet"):
 		PlayerStats.nohit = false
+		SoundPlayer.play(SoundPlayer.playerhit1)
 		PlayerStats.change_health(-10)
 	if body.is_in_group("Shooter"):
 		PlayerStats.nohit = false
+		SoundPlayer.play(SoundPlayer.playerhit1)
 		PlayerStats.change_health(-35)
 	if body.is_in_group("Boss_bullet"):
 		PlayerStats.nohit = false
+		SoundPlayer.play(SoundPlayer.playerhit1)
 		PlayerStats.change_health(-5)
 
 #other timers

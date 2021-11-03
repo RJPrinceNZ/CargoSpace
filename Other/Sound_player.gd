@@ -7,6 +7,7 @@ onready var launch1 = preload("res://Sound/mixkit-short-impact-static-3131.wav")
 onready var hit1 = preload("res://Sound/mixkit-short-explosion-1694.wav")
 onready var powerup1 = preload("res://Sound/mixkit-video-game-health-recharge-2837.wav")
 onready var powerup2 = preload("res://Sound/mixkit-handgun-release-1664.wav")
+onready var playerhit1 = preload("res://Sound/mixkit-falling-hit-757.wav")
 var current_volume = 1
 var vol = 1
 func play(sound):
