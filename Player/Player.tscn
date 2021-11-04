@@ -211,7 +211,7 @@ wait_time = 15.0
 one_shot = true
 
 [node name="RocketTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 one_shot = true
 
 [node name="Cooldown_timer" type="Timer" parent="."]

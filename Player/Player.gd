@@ -21,6 +21,7 @@ var motion = Vector2.ZERO
 var can_fire = true
 var can_cooldown = true
 var on_cooldown = false
+var fired_rocket = false
 #things that change on leave start
 func _ready():
 	PlayerStats.fire_heat = 0
@@ -104,17 +105,18 @@ func _process(delta):
 			PlayerStats.fire_heat += -0.2
 	if Input.is_action_pressed("ui_player_fire") and can_fire == true:
 		if PlayerStats.cooldown == false: 
-			if PlayerStats.has_rocket > 0:
+			if PlayerStats.has_rocket == 1:
+				fired_rocket = true
 				#what happens if player has rocket.
 				can_fire = false
 				print(can_fire)
-				PlayerStats.set_rocket(0)
 				var new_rocket = rocket.instance()
 				new_rocket.global_transform = $Position2D.global_transform
 				get_parent().add_child(new_rocket)
 				$RocketTimer.start()
+				PlayerStats.set_rocket(0)
 			
-			else:
+			elif PlayerStats.has_rocket == 0 and fired_rocket == false:
 				#what happens if player does not have rocket.
 				can_fire = false
 				var new_bullet = bullet.instance()
@@ -302,6 +304,7 @@ func _on_ExtraTimeTimer_timeout():
 func _on_RocketTimer_timeout():
 	can_fire = true
 	print("timerend")
+	fired_rocket = false
 
 
 
