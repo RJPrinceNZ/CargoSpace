@@ -173,8 +173,8 @@ margin_top = 26.6852
 margin_right = 77.5356
 margin_bottom = 35.6852
 rect_pivot_offset = Vector2( 42.8536, 6.32929 )
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 1, 0.94902, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Health"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -186,8 +186,8 @@ margin_top = 73.0
 margin_right = 69.0
 margin_bottom = 94.0
 rect_pivot_offset = Vector2( 42.8536, 6.32929 )
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 1, 0.94902, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Gun 
 Heat"
 __meta__ = {
@@ -199,8 +199,8 @@ margin_left = 43.2063
 margin_top = 129.0
 margin_right = 84.2063
 margin_bottom = 138.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 1, 0.94902, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Fuel"
 __meta__ = {
 "_edit_use_anchors_": false

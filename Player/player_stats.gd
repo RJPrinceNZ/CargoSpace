@@ -21,6 +21,8 @@ var nohit_level_6 = false
 var nohit = true
 var in_bonus_level = false
 var died = false
+var option_open = false
+var option_hover = false
 func _ready():
 	fire_heat = 0
 	health = 100

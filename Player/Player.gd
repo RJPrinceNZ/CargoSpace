@@ -40,7 +40,7 @@ func get_vector(angle):
 #what happens when in level for the player ship
 func _process(delta):
 	#gun heat tests
-	print(PlayerStats.fire_heat)
+	
 	if PlayerStats.fire_heat >= 10:
 		can_fire = false
 		on_cooldown = true
@@ -98,12 +98,12 @@ func _process(delta):
 		elif Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down") and not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
 			rot_dir = 0
 	#shooting gun
-	if PlayerStats.fire_heat > 0 and can_cooldown == true and not Input.is_action_pressed("ui_player_fire"):
+	if PlayerStats.option_open == false and PlayerStats.option_hover == false and PlayerStats.fire_heat > 0 and can_cooldown == true and not Input.is_action_pressed("ui_player_fire"):
 		can_cooldown = false
 		$Cooldown_timer.start()
 		if can_fire == true or on_cooldown == true:
 			PlayerStats.fire_heat += -0.2
-	if Input.is_action_pressed("ui_player_fire") and can_fire == true:
+	if PlayerStats.option_hover == false and PlayerStats.option_open == false and Input.is_action_pressed("ui_player_fire") and can_fire == true:
 		if PlayerStats.cooldown == false: 
 			if PlayerStats.has_rocket == 1:
 				fired_rocket = true
