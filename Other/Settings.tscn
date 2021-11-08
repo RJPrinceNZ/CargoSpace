@@ -176,6 +176,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Warning" type="Label" parent="."]
+margin_left = 14.3892
+margin_top = 141.827
+margin_right = 306.389
+margin_bottom = 162.827
+custom_fonts/font = ExtResource( 1 )
+text = "Warning, these settings will NOT 
+be saved when you quit the game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="HSlider2" to="." method="_on_HSlider2_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
