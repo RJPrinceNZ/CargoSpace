@@ -27,13 +27,10 @@ func change_volume(value):
 
 #change music function
 func change_music(song):
-	print(current_song)
-	print(song)
 	if current_song == song:
 		pass
 	else:
 		current_song = song
-		print("playing",song)
 		set_volume_db(current_volume)
 		set_stream(song)
 		play()
