@@ -3,7 +3,6 @@ extends Node
 #shows if player has completed levels without taking damage
 func _ready():
 	MusicPlayer.change_music(MusicPlayer.song2)
-	print(PlayerStats.nohit_level_1)
 	if PlayerStats.nohit_level_1 == true:
 		$QuestionMarkIcon1/AnimationPlayer.play("Unlocked")
 	if PlayerStats.nohit_level_2 == true:

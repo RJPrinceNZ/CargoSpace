@@ -45,7 +45,6 @@ func _on_Area2D_body_entered(body):
 		follow_player = true
 		player = body
 		look_at(player.position)
-		print("found player")
 
 
 func _on_DamageBox_body_entered(body):
@@ -59,7 +58,6 @@ func _on_DamageBox_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 	if body.name == "Player":
-		print("player lost")
 		$Out_of_range_timer.start()
 
 func _on_Out_of_range_timer_timeout():
