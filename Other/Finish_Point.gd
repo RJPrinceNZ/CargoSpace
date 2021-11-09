@@ -3,7 +3,6 @@ extends StaticBody2D
 
 
 func _on_Area2D_body_entered(body):
-	print("found")
 	if body.is_in_group("player"):
 		if PlayerStats.nohit == true:
 			PlayerStats.nohit_completed()

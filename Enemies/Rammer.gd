@@ -37,11 +37,9 @@ func _on_Area2D_body_entered(body):
 		$RayCast2D.set_enabled(true)
 		follow_player = true
 		player = body
-		print("found player")
 
 #when hit by things
 func _on_DamageBox_body_entered(body):
-	print(hp)
 	if body.is_in_group("Bullet"):
 		hp += -120
 		SoundPlayer.play(SoundPlayer.hit1)

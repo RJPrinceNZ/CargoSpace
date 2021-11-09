@@ -109,7 +109,6 @@ func _process(delta):
 				fired_rocket = true
 				#what happens if player has rocket.
 				can_fire = false
-				print(can_fire)
 				var new_rocket = rocket.instance()
 				new_rocket.global_transform = $Position2D.global_transform
 				get_parent().add_child(new_rocket)
@@ -250,10 +249,8 @@ func _on_Fuel_Timer_timeout():
 	PlayerStats.change_fuel(-1)
 	if not PlayerStats.has_fuel():
 		no_fuel = true
-		print("hello")
 		$Fuel_Timer.stop()
 	if no_fuel == true:
-		print("extra time")
 		$ExtraTimeTimer.start()
 #more movement stuff
 func apply_movement(acceleration):
@@ -296,14 +293,12 @@ func _on_Area2D_body_entered(body):
 
 #other timers
 func _on_ExtraTimeTimer_timeout():
-	print("end game")
 	get_tree().change_scene("res://Other/Game_Over.tscn")
 	
 
 
 func _on_RocketTimer_timeout():
 	can_fire = true
-	print("timerend")
 	fired_rocket = false
 
 

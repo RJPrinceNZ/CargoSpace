@@ -7,7 +7,7 @@ var bomb_speed = 300
 var bullet_speed = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("hello,my rotation is ",rotation)
+	
 	$Timer.start()
 
 func _physics_process(delta):

@@ -41,5 +41,4 @@ func _on_TextureButton2_pressed():
 		get_parent().add_child(new_menu_quit)
 	else:
 		new_menu_quit = nope.instance()
-		print("hello")
 		get_parent().add_child(new_menu_quit)

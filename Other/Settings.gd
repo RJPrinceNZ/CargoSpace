@@ -8,7 +8,6 @@ var Sound_Volume = "100%"
 func _ready():
 	$HSlider2.value = SoundPlayer.vol
 	$HSlider.value = MusicPlayer.vol
-	print(MusicPlayer.current_volume,SoundPlayer.current_volume)
 
 func _on_HSlider2_value_changed(value):
 	SoundPlayer.set_volume(value)
