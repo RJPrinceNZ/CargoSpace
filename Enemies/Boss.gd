@@ -7,16 +7,11 @@ onready var explosion = preload("res://Enemies/Explosion_big.tscn")
 onready var bullet = preload("res://Enemies/Boss_Bullet.tscn")
 onready var minion = preload("res://Enemies/Boss_mini.tscn")
 onready var bomb = preload("res://Enemies/Cluster_bomb.tscn")
-var found_player = false
 var can_fire = true
 var current_attack = 0
 var rotation_amount = 1
 var doing_attack = false
-# var a = 2
-# var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	hp = 10000
@@ -25,6 +20,7 @@ func _ready():
 	$CanvasLayer/ProgressBar.set_value(hp)
 
 func _process(delta):
+	#rng attack chosing
 	if current_attack == 0:
 		current_attack = randi() % 4 +1
 		$Attack_end_timer.start()
@@ -56,6 +52,7 @@ func _process(delta):
 	$CanvasLayer/Boss_Hp_Bar.set_text(str(hp))
 	$CanvasLayer/ProgressBar.set_value(hp)
 	if hp <= 0:
+		#death animation
 		SoundPlayer.play(SoundPlayer.explosion1)
 		var new_explosion = explosion.instance()
 		get_parent().add_child(new_explosion)
@@ -92,23 +89,16 @@ func attack_2():
 	new_minion4.global_transform = $Summon_point4.global_transform
 	get_parent().add_child(new_minion4)
 
+#if hit by bullet of player
 func _on_HitBox_body_entered(body):
 	if body.is_in_group("Bullet"):
 		hp += -120
 		SoundPlayer.play(SoundPlayer.hit1)
 
-
-func _on_Area2D_body_entered(body):
-	if body.name == "Player":
-		found_player = true
-		player = body
-
-
-
 func _on_Attack_end_timer_timeout():
 	doing_attack = false
 	current_attack = 0
 
-
+#timer for each bullet firing
 func _on_Timer_timeout():
 	can_fire = true

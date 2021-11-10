@@ -21,8 +21,12 @@ var nohit_level_6 = false
 var nohit = true
 var in_bonus_level = false
 var died = false
+
+#variables that stop player from shooting if mouse us in certain area or has an option open.
 var option_open = false
 var option_hover = false
+
+#constant stats
 func _ready():
 	fire_heat = 0
 	health = 100
@@ -31,7 +35,7 @@ func _ready():
 	fuel_max = 100
 	cooldown = false
 
-#tests if the player has completed every level without taking a hit
+#tests if the player has completed every level without taking a hit, thus then going to the bonus level
 func nohit_completed():
 	if current_level == 1:
 		nohit_level_1 = true

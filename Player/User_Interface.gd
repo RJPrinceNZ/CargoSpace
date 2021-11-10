@@ -12,6 +12,8 @@ var mouse_location
 func _ready():
 	$Health_Bar.max_value = PlayerStats.health_max
 	$Fuel_Bar.max_value = PlayerStats.fuel_max
+	
+#code that updates every bar
 func _process(delta):
 	mouse_location = get_viewport().get_mouse_position()
 	if mouse_location.y < 30 and mouse_location.x > 305:

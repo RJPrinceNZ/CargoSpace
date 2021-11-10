@@ -1,5 +1,5 @@
 extends Node
-#cutscene played after boss (spelling opps)
+#cutscene played after boss
 
 var current_text = 1
 var text01 = "pathetic"
@@ -20,12 +20,13 @@ var text26 = "yep, that's right"
 var text27 = "it's nothing"
 var can_press = false
 
+#stops music
 func _ready():
 	MusicPlayer.mute()
 	can_press = false
 	$Timer.start()
 
-
+#text changing (dependant on how well the player did)
 func _process(delta):
 	if PlayerStats.nohit == true:
 		if current_text == 1:
@@ -69,17 +70,14 @@ func _process(delta):
 		if current_text >= 6:
 			get_tree().quit()
 	
-
-
-
-
+#code the changes the text variable
 func _on_Next_pressed():
 	can_press = false
 	current_text += 1
 	$AnimationPlayer.play("Hidden")
 	$Timer.start()
 
-
+#code that forces the player to read for a little bit.
 func _on_Timer_timeout():
 	can_press = true
 	$AnimationPlayer.play("Shown")

@@ -12,6 +12,7 @@ var text6 = "Impressive"
 var text7 = "Well then"
 var text8 = "Let's test out your skills shall we?"
 
+#stops music
 func _ready():
 	MusicPlayer.mute()
 	$Label.set_text(text1)

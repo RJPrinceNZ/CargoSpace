@@ -1,5 +1,5 @@
 extends StaticBody2D
-#points wheer the player finishes the level
+#points where the player finishes the level
 
 
 func _on_Area2D_body_entered(body):

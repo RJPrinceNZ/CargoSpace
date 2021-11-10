@@ -30,11 +30,6 @@ func _physics_process(delta):
 		var velocity = position.direction_to(player.position) * -movespeed
 		move_and_slide(velocity, Vector2.UP)
 		
-	
-func _ready():
-	pass
-
-
 
 func _on_Shooter_Timer_timeout():
 	can_fire = true
@@ -47,6 +42,7 @@ func _on_Area2D_body_entered(body):
 		look_at(player.position)
 
 
+#if enemy is hit, what happens
 func _on_DamageBox_body_entered(body):
 	if body.name == "Player":
 		hp = 0

@@ -124,12 +124,7 @@ func _process(delta):
 				get_parent().add_child(new_bullet)
 				$Gun_Timer.start()
 				PlayerStats.fire_heat += 0.5
-		#if no_fuel == false:
-			#velo = Vector2(speed_limit, 0).rotated(rotation)
-#		move_vec = move_vec.normalize()
-		#change_speed()
-		#move_and_slide(move_vec * speed_limit)
-	#move_and_slide(velo)
+
 
 #useless function, is old code not in use.
 func change_speed():
@@ -239,6 +234,7 @@ func change_speed():
 		yspeed += a * 0.984807753
 	if current_rotation == 360:
 		yspeed += a
+
 func move(Xspeed, Yspeed, delta):
 	moving = true
 	position.x += Xspeed * delta
@@ -296,7 +292,7 @@ func _on_ExtraTimeTimer_timeout():
 	get_tree().change_scene("res://Other/Game_Over.tscn")
 	
 
-
+#cool down from rocket
 func _on_RocketTimer_timeout():
 	can_fire = true
 	fired_rocket = false
